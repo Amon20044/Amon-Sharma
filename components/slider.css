@@ -1,0 +1,58 @@
+.slider {
+    width: 100vw;
+    overflow: hidden;
+    border-top: rgb(0, 0, 0) 3px solid;
+    background-color: #000000;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    translate: -15vw 0;
+}
+
+.slider .list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+}
+
+.slider .list .item {
+    color: rgb(255, 255, 255);
+    display: flex;
+    font-size: 1.3em;
+    align-items: center;
+    justify-content: center;
+    width: var(--width);
+    height: 100%; /* Updated height variable */
+    position: absolute; /* Ensure this is intended */
+    left: 0;
+    animation: autoRun 7s linear infinite;
+    margin: 0;
+    animation-delay: calc((7s / var(--quantity)) * (var(--position) - 1)) !important;
+}
+
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }
+    to {
+        left: calc(var(--width) * -1);
+    }
+}
+
+.slider:hover .item {
+    animation-play-state: paused !important;
+    filter: grayscale(1);
+}
+
+.slider .item:hover {
+    filter: grayscale(0);
+}
+
+@media (max-width:850px ){
+    .slider{
+        width: 170vw;
+        translate: -60vw 0;
+    }
+}
