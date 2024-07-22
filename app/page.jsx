@@ -4,7 +4,7 @@ import Navbar from "@/components/navbar";
 import Photo from "@/assets/photo.svg";
 import Image from "next/image";
 import AboutMe from '@/components/AboutMe';
-import Slider from '@/components/Slider';
+import Slider from '@/components/slider';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from 'lenis';
