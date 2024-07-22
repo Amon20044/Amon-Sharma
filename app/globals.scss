@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/brogi');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+// lenis --------------------------------------- smooth scrolling best
+html.lenis, html.lenis body {
+  
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+
+// lenis ---------------------------------------
+
+@font-face {
+  font-family: 'Brogi';
+  font-style: normal;
+  src: local('Brogi'), url('https://fonts.cdnfonts.com/s/91270/BrogiFREE.woff') format('woff');
+}
+
+:root{
+  --primaryColor:#FFFCE1;
+  --opacity:#fffce13f;
+  --borderColor:black;
+  --personaColor:#d9ff50;
+  --h1Size : 4em;
+  --borderW8:1px;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  width: 100vw; 
+  height: 100vh;
+  display: block;
+  background-color: var(--primaryColor);
+}
+
+.image {
+  position: absolute;
+  width: 40vw;
+  height: 120vh;
+  left: 0;
+  top: 0;
+}
+
+.right {
+  right: 0;
+  position: absolute;
+  width: 60vw;
+  height: 85.8vh;
+  border-left: var(--borderW8) var(--borderColor) solid;
+}
+
+.landingPage {
+  display: flex;
+  width: 100vw;
+}
+.head{
+  font-size: 2rem;
+}
+.upperBlock {
+  width: 100%;
+  height: 60%;
+  background-color: var(--primaryColor);
+  border-bottom: var(--borderW8) black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative; /* Add this to position the animated circle */
+  
+}
+
+.upperBlock p {
+  font-size: calc(0.7*var(--h1Size));
+  margin-left: 5vw;
+  color: white;
+  width: 85%;
+  z-index: 4;
+  mix-blend-mode:difference;
+  line-height: 1em;
+}
+
+.upperBlock div {
+  opacity: 0;
+  z-index: 0;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  translate: -27vw;
+  border-radius: 50%;
+  background-color: var(--personaColor);
+  transform: scale(1);
+  transition: opacity 0.4s ease-in-out, transform 0.8s ease-in-out;
+}
+.upperBlock:hover div {
+  opacity: 1;
+  transform: scale(20); /* Scale up on hover */
+  transition: opacity 0.2s ease-in-out, transform 0.6s ease-in-out;
+}
+.downBlock {
+  position: relative;
+  height: 40%;
+  border-bottom: var(--borderW8) black solid;
+  width: 100%;
+  background-color: var(--primaryColor);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.upperBlock::before{
+  content: '';
+  translate: -3.5vw;
+  width: 20vw;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+.upperBlock::after{
+  content: '';
+  translate: -46vw;
+  height: 65%;
+  width: 15vw;
+  background-color: rgb(255, 255, 255);
+  mix-blend-mode: exclusion;
+  z-index: 3;
+}
+.downBlock{
+  position: relative;
+  height: 40%;
+  border-bottom: var(--borderW8) black solid ;
+  width: 100%;
+  background-color:var(--primaryColor);
+  display: flex;
+  justify-content:center;
+  overflow: hidden;
+}
+.downBlock .name{
+  translate: 0 -10vh;
+  margin: 0;
+  margin-bottom: 2%;
+  mix-blend-mode: difference;
+  color: var(--primaryColor);
+  
+  font-size: calc(var(--h1Size)*1.5);
+}
+.downBlock .name span{
+  font-family: "brogi", "Montserrat";
+}
+.downBlock .designation{
+  margin: 0;
+  position: absolute;
+  translate: 0 -7.5vh;
+  font-size: calc(var(--h1Size)*1.2);
+  width: 100%;
+  z-index: 0;
+}
+.first{
+  font-family: "brogi", "Montserrat";
+}
+.AboutPage {
+  position: relative;
+  top: 80.8vh;
+  height: auto;
+  width: 100vw;
+  border: var(--borderW8) var(--borderColor) solid;
+  background-color: var(--primaryColor);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 500px){
+  :root{
+    --h1Size :2em;
+  }
+}
+
+@media (max-width:850px){
+  .downBlock .name{
+    translate: 0 -10vh;
+    margin: 0;
+    margin-bottom: 0;
+  }
+
+  :root{
+    --h1Size :  3.2em;
+  }
+  .upperBlock {
+    width: 100%;
+    height: 60%;
+    background-color: var(--primaryColor);
+    border-bottom: var(--borderW8) black solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .upperBlock p{
+    width: 100%;
+    z-index: 1;
+  }
+  .right .upperBlock::after , .right .upperBlock::before{
+    display: none;
+  }
+
+  .upperBlock p{
+    transform: rotate(-90deg);
+    margin: 0;
+    width: 80vw;
+    line-height: 6.7vw;
+
+  }
+  .downBlock{
+    position: absolute;
+    display: flex;
+    z-index: 4;
+    width: 100vw;
+    height: 25vh;
+    translate: -70vw 0 ;
+    background-color: var(--primaryColor);
+    border: black var(--borderW8) solid; 
+  }
+  .right{
+    position: absolute;
+    width: 30vw;
+  }
+  .image{
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    width: 72vw;
+    translate: 0vw 10vh;
+  }
+
+  .AboutPage{
+    z-index: 5;
+    top: 73.8vh;
+  }
+}
+
+
+body {
+  font-family: sans-serif;
+}

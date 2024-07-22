@@ -1,5 +1,5 @@
 .slider {
-    width: 100vw;
+    width: 150vw;
     overflow: hidden;
     border-top: rgb(0, 0, 0) 3px solid;
     background-color: #000000;
@@ -7,12 +7,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    translate: -15vw 0;
+    translate: -70vw 0;
 }
 
 .slider .list {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     min-width: calc(var(--width) * var(--quantity));
 }
@@ -27,9 +28,9 @@
     height: 100%; /* Updated height variable */
     position: absolute; /* Ensure this is intended */
     left: 0;
-    animation: autoRun 7s linear infinite;
+    animation: autoRun 10s linear infinite;
     margin: 0;
-    animation-delay: calc((7s / var(--quantity)) * (var(--position) - 1)) !important;
+    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1)) !important;
 }
 
 @keyframes autoRun {
@@ -52,7 +53,7 @@
 
 @media (max-width:850px ){
     .slider{
-        width: 170vw;
-        translate: -60vw 0;
+        width: 300vw;
+        translate: -150vw 0;
     }
 }

@@ -1,0 +1,18 @@
+.font{
+    font-size: calc(var(--h1Size)*.34);
+}
+.side-nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    height: 100%;
+    width: 300px;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transform: translateX(100%);
+    overflow: hidden;
+    transition: transform var(--transtime); /* Added transition for side nav */
+}

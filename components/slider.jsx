@@ -1,10 +1,10 @@
 "use client";
 import './slider.css';
-import '@/app/globals.css';
+import '@/app/globals.scss';
 export default function Slider() {
     const sliderStyle = {
-        '--width': '200px',
-        '--quantity': '4',
+        '--width': '600px',
+        '--quantity': '6',
     };
 
     return (
@@ -21,6 +21,12 @@ export default function Slider() {
                 </div>
                 <div className="item" style={{ '--position': 4 }}>
                     <p className='head'><span className='first'>U</span>I <span className='first'>D</span>ev </p>
+                </div>
+                <div className="item" style={{ '--position': 5 }}>
+                    <p className='head'><span className='first'>G</span>raphic <span className='first'>D</span>esigner </p>
+                </div>
+                <div className="item" style={{ '--position': 6 }}>
+                    <p className='head'><span className='first'>V</span>ideo <span className='first'>E</span>ditor </p>
                 </div>
             </div>
         </div>

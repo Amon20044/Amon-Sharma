@@ -10,12 +10,12 @@ export function SideNav({ isOpen, onClose }) {
     React.useEffect(() => {
         if (isOpen) {
             gsap.timeline()
-                .to(circleRef.current, { width: '200%', height: '200%', duration: 0.5, ease: 'power1.inOut' })
-                .to(sideNavRef.current, { x: 0, duration: 0.5, ease: 'power1.inOut' }, '-=0.25');
+                .to(circleRef.current, { width: '200%', height: '200%', duration: 0.2, ease: 'power1.inOut' })
+                .to(sideNavRef.current, { x: 0, duration: 0.2, ease: 'power1.inOut' }, '-=0.25');
         } else {
             gsap.timeline()
-                .to(sideNavRef.current, { x: '100%', duration: 0.5, ease: 'power1.inOut' })
-                .to(circleRef.current, { width: 0, height: 0, duration: 0.5, ease: 'power1.inOut' }, '-=0.25');
+                .to(sideNavRef.current, { x: '100%', duration: 0.2, ease: 'power1.inOut' })
+                .to(circleRef.current, { width: 0, height: 0, duration: 0.2, ease: 'power1.inOut' }, '-=0.25');
         }
     }, [isOpen]);
 

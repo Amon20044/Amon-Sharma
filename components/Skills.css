@@ -1,0 +1,73 @@
+/* Skills.css */
+.skills-container {
+    padding: 50px;
+    background-color: var(--primaryColor);
+    text-align: center; /* Center align text */
+  }
+  
+  .skill-sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .skill-section {
+    margin-bottom: 50px;
+  }
+  
+  h1 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--borderColor);
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-family: 'Brogi', sans-serif;
+    color: var(--borderColor);
+    margin-bottom: 20px;
+  }
+  
+  .skills-grid {
+    flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align items horizontally */
+    gap: 20px;
+  }
+  
+  .skills-grid a {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .skill-icon {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .skill-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .skills-grid {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .skills-grid {
+      
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  
+.font{
+    font-size: calc(var(--h1Size)*.34);
+}

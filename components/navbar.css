@@ -8,16 +8,18 @@
 }
 
 .nav {
+    font-size: calc(var(--h1Size)*.34);
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5vh 20px;
     background-color: rgba(255, 255, 255, 0);
-    border-bottom: var(--borderW8) solid black; /* Corrected border property */
+    border-bottom: var(--borderW8) solid black; 
 }
 
 .logo-container {
+    position: fixed;
     display: flex;
     align-items: center;
 }
@@ -28,10 +30,12 @@
 }
 
 .nav-list {
+    left: 0;
     list-style-type: none;
     display: flex;
     margin: 0;
     padding: 0;
+    transition: var(--transtime); /* Added transition */
 }
 
 .nav-item {
@@ -46,6 +50,7 @@
 .toggle .nav-list.click {
     display: flex;
     flex-direction: column;
+    transition: var(--transtime); /* Added transition */
 }
 
 .toggle .bars {
@@ -61,7 +66,8 @@
 .bars div {
     width: 100%;
     height: 6px;
-    background-color: rgb(0, 0, 0);
+    mix-blend-mode: difference;
+    background-color: var(--primaryColor); /* Set the color to white */
     border-radius: 8px;
     transition: var(--transtime);
 }
@@ -116,4 +122,9 @@
     z-index: 999;
     transform: translateX(100%);
     overflow: hidden;
+    transition: transform var(--transtime); /* Added transition for side nav */
+}
+
+.side-nav.open {
+    transform: translateX(0);
 }
