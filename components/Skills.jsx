@@ -1,4 +1,3 @@
-// Skills.jsx
 'use client'
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
@@ -59,55 +58,49 @@ const skillIcons = {
   microservices: 'Microservices'
 };
 
-const Skills = () => {
-    useEffect(() => {
-      // Parallax effect for SkillImage
-      gsap.to('.SkillImage', { opacity: 1, y: 400 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: '.skills-container',
-            start: 'top center+=300',
-            end: 'bottom center',
-            scrub: true,
-          }
+export default function Skills() {
+  useEffect(() => {
+    // Parallax effect for SkillImage
+    gsap.to('.SkillImage', {
+      yPercent: -20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.skills-container',
+        start: 'top bottom', 
+        end: 'bottom top',
+        scrub: true,
+      },
+    });
+
+    // Animation for skill sections
+    gsap.fromTo('.skill-section',
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: '.skills-container',
+          start: 'top center+=300',
+          end: 'bottom center',
+          scrub: true,
         }
+      }
     );
-  
-      // Animation for skill sections
-      gsap.fromTo('.skill-section',
-        { opacity: 0, y: 100 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.3,
-          scrollTrigger: {
-            trigger: '.skills-container',
-            start: 'top center+=300',
-            end: 'bottom center',
-            scrub: true,
-          }
-        }
-      );
-    }, []);
+  }, []);
 
   return (
-    <div className="skills-container flex align-middle items-center justify-center content-center h-[220vh] relative translate-y-[70vh] font ">
+    <div className="skills-container flex align-middle items-center justify-center content-center h-[220vh] relative translate-y-[70vh] font">
       <div className='absolute z-0 w-[100vw] h-auto left-0 SkillImage top-20'>
         <Image
-        src={Skillss}
-        alt='skills'
-        
-            objectFit={`cover`}
-            objectPosition="right top"
-            className='w-[100vw]'
+          src={Skillss}
+          alt='skills'
+          style={{ width: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'right top' }}
         />
       </div>
       <div className="skill-sections mt-[20vh]">
-      <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
+        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
         <div className="skill-section">
           <h2>Graphic Design Tools</h2>
           <div className="skills-grid">
@@ -121,12 +114,11 @@ const Skills = () => {
             ))}
           </div>
         </div>
-        <div className="skill-section">
-            
         <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
+        <div className="skill-section">
           <h2>3D Tools</h2>
-          <div className="skills-grid ">
-            {['unreal', 'unity',  'blender'].map((tool) => (
+          <div className="skills-grid">
+            {['unreal', 'unity', 'blender'].map((tool) => (
               <a key={tool} href={`https://skillicons.dev`} target="_blank" rel="noopener noreferrer">
                 <img
                   src={`https://skillicons.dev/icons?i=${skillIcons[tool]}`}
@@ -136,10 +128,8 @@ const Skills = () => {
             ))}
           </div>
         </div>
-        
+        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
         <div className="skill-section">
-            
-      <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
           <h2>Programming Languages</h2>
           <div className="skills-grid">
             {['java', 'python', 'javascript', 'cpp', 'c', 'html', 'css'].map((skill) => (
@@ -152,9 +142,8 @@ const Skills = () => {
             ))}
           </div>
         </div>
+        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
         <div className="skill-section">
-            
-      <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
           <h2>Frameworks</h2>
           <div className="skills-grid">
             {['react', 'vue', 'next', 'angular', 'django'].map((skill) => (
@@ -167,9 +156,8 @@ const Skills = () => {
             ))}
           </div>
         </div>
+        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
         <div className="skill-section">
-            
-      <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
           <h2>Development Tools</h2>
           <div className="skills-grid">
             {['git', 'docker'].map((tool) => (
@@ -182,9 +170,8 @@ const Skills = () => {
             ))}
           </div>
         </div>
+        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
         <div className="skill-section">
-            
-      <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
           <h2>Cloud Platforms</h2>
           <div className="skills-grid">
             {['aws', 'vercel', 'azure'].map((platform) => (
@@ -197,9 +184,8 @@ const Skills = () => {
             ))}
           </div>
         </div>
+        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
         <div className="skill-section">
-            
-      <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
           <h2>Databases</h2>
           <div className="skills-grid">
             {['mysql', 'postgresql', 'mongodb'].map((db) => (
@@ -217,4 +203,3 @@ const Skills = () => {
   );
 };
 
-export default Skills;

@@ -1,6 +1,6 @@
 "use client";
 import './slider.css';
-import '@/app/globals.scss';
+import '@/app/globals.css';
 export default function Slider() {
     const sliderStyle = {
         '--width': '600px',
