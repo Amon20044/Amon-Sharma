@@ -76,7 +76,7 @@ const Navbar = () => {
             <SideNav isOpen={toggleNav} onClose={() => setToggleNav(false)} />
             {showHamburger && (
                 <div
-                    className="hamburger fixed top-[4vh] bars flex-col right-[4vw] w-8 h-8 space-y-2  rounded-full mix-blend-difference flex items-center justify-center z-50"
+                    className="hamburger fixed top-[4vh] right-8 bars flex-col right-[4vw] w-8 h-8 space-y-2  rounded-full mix-blend-difference flex items-center justify-center z-50"
                     onClick={handleBarClick}
                 >
                     <div></div>

@@ -66,7 +66,7 @@ export default function Skills() {
         scrollTrigger: {
           trigger: '.skills-container',
           start: 'top 0%',
-          end: '+=1000',
+          end: '+=1500',
           scrub: true,
         },
       });
@@ -76,7 +76,7 @@ export default function Skills() {
           '.SkillImage',
           { opacity: 1, y: 0, duration:1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
         )
-        .to('.SkillImage', { opacity: 1, y: 1000, duration:1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")});
+        .to('.SkillImage', { opacity: 1, y: 1800, duration:1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")});
 
     // Animation for skill sections
     gsap.fromTo('.skill-section',
@@ -105,7 +105,7 @@ export default function Skills() {
           style={{ width: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'right top' }}
         />
       </div>
-      <div className="skill-sections mt-[20vh]">
+      <div className="skill-sections mt-[10vw]">
         <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
         <div className="skill-section">
           <h2>Graphic Design Tools</h2>
