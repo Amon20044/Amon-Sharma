@@ -110,7 +110,7 @@ export default function Home() {
       <div className="-z-10">
         <Skills/>
       </div>
-
+      { winCheck &&
       <div
         className="fixed w-12 h-12 bg-white rounded-full pointer-events-none"
         style={{
@@ -120,7 +120,7 @@ export default function Home() {
           zIndex: 999,
           mixBlendMode: 'difference'
         }}
-      />
+      />}
     </div>
   );
 }
