@@ -59,18 +59,13 @@ export default function Home() {
         setWinCheck(window.innerWidth >= 850);
     };
 
-    const handleScroll = () => {
-        const navHeight = document.querySelector('.navUp').offsetHeight;
-        setShowHamburger(window.scrollY >= navHeight);
-    };
-
     updateWinCheck();
     window.addEventListener('resize', updateWinCheck);
-    window.addEventListener('scroll', handleScroll);
+   
 
     return () => {
         window.removeEventListener('resize', updateWinCheck);
-        window.removeEventListener('scroll', handleScroll);
+       
     };
 }, []);
   return (
