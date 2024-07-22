@@ -69,7 +69,7 @@ export default function Home() {
     };
 }, []);
   return (
-    <div className="body relative" >
+    <div className="body font-proza " >
       <div className={`landingpage`}>
         <div className="navbar">
           <Navbar/>

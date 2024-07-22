@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         brogi: ['var(--brogi)']
       },
+      fontFamily: {
+        'proza': ['"Proza Libre"', 'sans-serif'],
+      },
       
     },
   },
