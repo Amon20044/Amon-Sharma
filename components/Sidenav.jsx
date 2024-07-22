@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 import './navbar.css';
 
-export default function SideNav({ isOpen, onClose }) {
+export function SideNav({ isOpen, onClose }) {
     const sideNavRef = useRef(null);
     const circleRef = useRef(null);
 

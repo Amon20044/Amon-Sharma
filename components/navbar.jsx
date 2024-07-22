@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Logo from '@/assets/logo.svg'; // Ensure the path is correct
 import Image from 'next/image';
-import { SideNav } from './SideNav';
+import { SideNav } from './Sidenav';
 
 // Define the component with TypeScript
 const Navbar = () => {
