@@ -11,7 +11,7 @@ import amon from '@/assets/amon.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AboutMe = () => {
+export default function AboutMe  ()  {
   useEffect(() => {
     const startDesktop = 'top 85% center';
     const startMobile = 'top 130% center';
@@ -115,4 +115,3 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;

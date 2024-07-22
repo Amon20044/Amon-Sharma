@@ -65,7 +65,7 @@ const animeData = [
   },
 ];
 
-const AnimationComponent = () => {
+export default function AnimationComponent  () {
 
     const listItemRefs = useRef([]);
   
@@ -185,4 +185,3 @@ const AnimationComponent = () => {
     );
   };
   
-  export default AnimationComponent;
