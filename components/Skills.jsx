@@ -74,11 +74,11 @@ export default function Skills() {
       SkillAnimation
         .fromTo(
           '.SkillImage',
-          { opacity: 1, y: 0, duration:0.1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-          { opacity: 1, y: 100, duration:0, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+          { opacity: 1, y: 0, duration:2, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+          { opacity: 1, y: 750, duration:2, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
         
         )
-        .to('.SkillImage', { opacity: 1, y: 700, duration:1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")});
+        .to('.SkillImage', { opacity: 1, y: 1500, duration:2, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")});
 
     // Animation for skill sections
     gsap.fromTo('.skill-section',
