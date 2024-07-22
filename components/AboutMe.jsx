@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutMee from '@/assets/AboutMe.svg';
 import './AboutMe.css';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import about from '@/assets/about.svg';
 import amon from '@/assets/amon.jpeg';
 
