@@ -1,11 +1,12 @@
 'use client'
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
+import CustomEase from 'gsap/CustomEase';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import './Skills.css'; // Import the CSS file for styling
 import Skillss from '@/assets/Skills.svg'
 import Image from 'next/image';
-
+gsap.registerPlugin(CustomEase);
 // Register the GSAP ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,16 +62,21 @@ const skillIcons = {
 export default function Skills() {
   useEffect(() => {
     // Parallax effect for SkillImage
-    gsap.to('.SkillImage', {
-      yPercent: -20,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.skills-container',
-        start: 'top bottom', 
-        end: 'bottom top',
-        scrub: true,
-      },
-    });
+    const SkillAnimation = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.skills-container',
+          start: 'top 0%',
+          end: '+=1000',
+          scrub: true,
+        },
+      });
+  
+      SkillAnimation
+        .from(
+          '.SkillImage',
+          { opacity: 1, y: 0, duration:1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+        )
+        .to('.SkillImage', { opacity: 1, y: 1000, duration:1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")});
 
     // Animation for skill sections
     gsap.fromTo('.skill-section',
