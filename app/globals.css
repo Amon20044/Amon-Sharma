@@ -3,6 +3,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: 'brogi';
+  src: url('/fonts/BrogiFREE.woff2') format('woff2'),
+       url('/fonts/BrogiFREE.woff') format('woff'),
+       url('/fonts/BrogiFREE.ttf') format('truetype');
+}
 
 html.lenis, html.lenis body {
   

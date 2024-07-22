@@ -1,5 +1,16 @@
 import { Montserrat } from "next/font/google";
 import './globals.css';
+import localFont from 'next/font/local';
+
+const brogi = localFont({
+  src: [
+    { path: './fonts/BrogiFREE.woff2', weight: 'normal', style: 'normal' },
+    { path: './fonts/BrogiFREE.woff', weight: 'normal', style: 'normal' },
+    { path: './fonts/BrogiFREE.ttf', weight: 'normal', style: 'normal' },
+  ],
+  variable: '--brogi',
+  display: 'swap',
+});
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
