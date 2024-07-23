@@ -52,11 +52,6 @@ const skillIcons = {
   postgresql: 'postgres',
   mongodb: 'mongodb',
 
-  // Methodologies
-  agile: 'Agile',
-  scrum: 'Scrum',
-  rest: 'Rest',
-  microservices: 'Microservices'
 };
 
 export default function Skills() {
@@ -66,7 +61,7 @@ export default function Skills() {
         scrollTrigger: {
           trigger: '.skills-container',
           start: 'top 0%',
-          end: '+=1500',
+          end: 'bottom 0%',
           scrub: true,
         },
       });
@@ -74,12 +69,11 @@ export default function Skills() {
       SkillAnimation
         .fromTo(
           '.SkillImage',
-          { opacity: 1, y: 0, duration:2, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-          { opacity: 1, y: 750, duration:2, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+          { opacity: 1, y: 0, duration:6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+          { opacity: 1, y: 1000, duration:6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
         
         )
-        .to('.SkillImage', { opacity: 1, y: 1500, duration:2, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")});
-
+        
     // Animation for skill sections
     gsap.fromTo('.skill-section',
       { opacity: 0, y: 100 },
@@ -90,7 +84,7 @@ export default function Skills() {
         stagger: 0.3,
         scrollTrigger: {
           trigger: '.skills-container',
-          start: 'top center+=300',
+          start: 'top center+=100',
           end: 'bottom center',
           scrub: true,
         }
@@ -124,7 +118,7 @@ export default function Skills() {
         </div>
         <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
         <div className="skill-section">
-          <h2>3D Tools</h2>
+          <h2>3D Tools & Game Development</h2>
           <div className="skills-grid">
             {['unreal', 'unity', 'blender'].map((tool) => (
               <a key={tool} href={`https://skillicons.dev`} target="_blank" rel="noopener noreferrer">
@@ -206,6 +200,7 @@ export default function Skills() {
             ))}
           </div>
         </div>
+        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
       </div>
     </div>
   );

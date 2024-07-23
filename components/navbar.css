@@ -99,7 +99,7 @@
 
 .noise {
     background: 
-        linear-gradient(20deg, #FFFCE1, transparent), 
+        linear-gradient(20deg, #D9FF50 , #e2ff78), 
         url(https://grainy-gradients.vercel.app/noise.svg); 
 }
 

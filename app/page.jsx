@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from 'lenis';
 import Skills from "@/components/Skills";
+import Services from "@/components/Services";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,9 +69,13 @@ export default function Home() {
        
     };
 }, []);
+
+useEffect(()=>{
+
+},[]);
   return (
-    <div className="body font-proza " >
-      <div className={`landingpage`}>
+    <div className={`body font-proza ${!winCheck && 'cursor-none'}`} >
+      <div className={`landingpage block`}>
         <div className="navbar">
           <Navbar/>
         </div>
@@ -89,7 +94,7 @@ export default function Home() {
           <div className="upperBlock">
             <div></div> {/* Animated circle */}
             <p >
-              "<span className='first'>M</span>ake your <span className='first'>Output</span> <span className='first'>C</span>ommunicate <span className='first'>E</span>fficiently"
+              "<span className="first">I</span> <span className='first'>M</span>ake your <span className='first underline'>Product</span> <span className='first'>C</span>ommunicate <span className='first'>E</span>fficiently"
             </p>
           </div>
           <div className="downBlock overflow-hidden">
@@ -103,12 +108,15 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="AboutPage overflow-x-hidden z-10">
+      <div className="AboutPage overflow-x-hidden z-10 block">
         <AboutMe/>
       </div>
 
-      <div className="-z-10">
+      <div className="-z-10 block rounded-2xl">
         <Skills/>
+      </div>
+      <div className="-z-[20]">
+        <Services/>
       </div>
       { winCheck &&
       <div

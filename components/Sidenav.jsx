@@ -26,11 +26,11 @@ export default function SideNav({ isOpen, onClose }) {
                 <div className="p-4 flex justify-end">
                     <button onClick={onClose}>Close</button>
                 </div>
-                <ul className="p-4">
-                    <li><a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100">Home</a></li>
-                    <li><a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100">About</a></li>
-                    <li><a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100">Services</a></li>
-                    <li><a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100">Contact</a></li>
+                <ul className="p-4 mix-blend-difference">
+                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800">Home</a></li>
+                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800">About</a></li>
+                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800">Services</a></li>
+                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800">Contact</a></li>
                 </ul>
             </nav>
             {isOpen && <div className="overlay fixed inset-0" onClick={onClose}></div>}

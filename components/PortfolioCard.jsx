@@ -4,8 +4,11 @@ import Link from 'next/link';
 
 const PortfolioCard = ({ imageUrl, title, clientName, behanceLink }) => {
   const CardContent = () => (
-    <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer">
-      <div className="relative h-48 w-full">
+    
+            
+    <div className=" bg-black bord border-2 overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer">
+      
+      <div className=" relative h-48 w-full">
         <Image
           src={imageUrl || '/placeholder-image.jpg'}
           alt={title}

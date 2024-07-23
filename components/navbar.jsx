@@ -64,7 +64,7 @@ const Navbar = () => {
                         <div></div>
                     </div>
                     {winCheck && (
-                        <ul className={`nav-list space-x-[6vw] ${toggleNav ? 'click' : ''}`}>
+                        <ul className={`nav-list space-x-[6vw] pr-8 ${toggleNav ? 'click' : ''}`}>
                             <li className="nav-item">Home</li>
                             <li className="nav-item">About me</li>
                             <li className="nav-item">Projects</li>

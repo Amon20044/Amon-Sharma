@@ -78,20 +78,20 @@ export default function AboutMe  ()  {
               className='rounded-2xl '
             />
           </div>
-          <div className='h-[40%] w-full flex items-center justify-center flex-col my-5'>
-            <p className='text-[4rem] leading-none max-[850px]:text-[3rem]'>
-              <span className='first font-semibold'>You</span> can call me Creative <i className='font-bold'>Sharma’ji ka beta</i>.
+          <div className='h-[40%] w-full flex items-center justify-center flex-col my-2'>
+            <p className='text-[4rem] leading-none max-[850px]:text-[3rem] font-extralight'>
+              <span className='first font-semibold'>You</span> can call me Creative <i className='font-bold'>Sharma’ji or D-Zyner</i>.
             </p>
           </div>
 
-          <div className='h-[60%] w-[100%] flex flex-col items-center justify-around my-5'>
+          <div className='h-[60%] w-[100%] flex flex-col items-center justify-around my-2'>
             <div className='w-full h-[2px] bgcolor'></div>
-            <p className='text-[1.5rem] leading-snug  font-light max-[850px]:text-[1.2rem] my-5'>
-              Amon Sharma from Vadodara currently pursuing B.Tech CSE in IIIT Vadodara.
+            <p className='text-[1.35rem] leading-snug  font-light max-[850px]:text-[1.1rem] my-2 font-thin'>
+              <span className='first'>I</span> am <span className='bg-[#D9FF50] text-[#2600AF] font-bold'>Amon Sharma</span> from Vadodara currently pursuing B.Tech CSE in <span className='bg-[#2600AF]  text-[#D9FF50] font-bold'>IIIT Vadodara.</span> 
             </p>
             <div className='w-full h-[.1px] bgcolor'></div>
-            <div className='text-[1.5rem] leading-snug font-light max-[850px]:text-[1.2rem] my-5'>
-              <span className='font-bold'><span className='first'>Y</span>ou</span> can call me <span className='first font-bold'>Dzyno</span>, not Dino because I am too old from my skills and young from my fitness. Jokes aside, I am a <span className='font-bold'><i>Techy</i></span>, <span className='font-bold'><i>Sleeky</i></span>, <span className='font-bold'><i>Visual</i></span>, <span className='font-bold'><i>Market</i></span>, <span className='font-bold'><i>Creation lover</i></span>. I love to create epic stories for your products, whether it's <span className='font-bold'><i>visually</i></span>, through <span className='font-bold'><i>video creation</i></span>, or as a <span className='font-bold'><i>content creator</i></span> for your next successful project. With expertise in <span className='font-bold'><i>Frontend Development</i></span>, <span className='font-bold'><i>UI/UX</i></span>, <span className='font-bold'><i>Graphics Design</i></span>, <span className='font-bold'><i>Marketing</i></span>, and <span className='font-bold'><i>Content Creation</i></span>, I can help bring your vision to life. Let's collaborate and make your brand stand out in the market!
+            <div className='text-[1.35rem] leading-snug font-light max-[850px]:text-[1.1rem] my-2 font-thin'>
+              <span className='font-bold text-[2rem]'><span className='first'>Y</span>ou</span> can call me <span className='first font-bold'>Dzyno (or D-Zyner) </span>, not Dino because I am too old from my skills and young from my age and fitness. Jokes aside, I am a <span className='font-bold'><i>Techy</i></span>, <span className='font-bold'><i>Sleeky</i></span>, <span className='font-bold'><i>Visual</i></span>, <span className='font-bold'><i>Market</i></span>, <span className='font-bold'><i>Creation lover</i></span>. I love to create epic stories for your products, whether it's <span className='font-bold'><i>visually</i></span>, through <span className='font-bold'><i>video creation</i></span>, or as a <span className='font-bold'><i>content creator</i></span> for your next successful project. With expertise in <span className='font-bold'><i>Frontend Development</i></span>, <span className='font-bold'><i>UI/UX</i></span>, <span className='font-bold'><i>Graphics Design</i></span>, <span className='font-bold'><i>Marketing</i></span>, and <span className='font-bold'><i>Content Creation</i></span>, I can help bring your vision to life. <span className='bg-[#D9FF50] text-[#2600AF] font-bold'> Let's collaborate </span> and make your brand stand out in the <span className='font-black'>market!</span> 
             </div>
             <div className='w-full h-[2px] bgcolor'></div>
             <div className='design h-[65vw] w-[44vw] absolute translate-y-[0vh] -z-10 max-[850px]:translate-y-[50vh] max-[850px]:h-[55vh] max-[850px]:w-[100vw] right-0 top-0'>
