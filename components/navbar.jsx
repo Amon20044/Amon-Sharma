@@ -64,11 +64,11 @@ const Navbar = () => {
                         <div></div>
                     </div>
                     {winCheck && (
-                        <ul className={`nav-list space-x-[6vw] pr-8 ${toggleNav ? 'click' : ''}`}>
-                            <li className="nav-item">Home</li>
-                            <li className="nav-item">About me</li>
-                            <li className="nav-item">Projects</li>
-                            <li className="nav-item">Contact Me</li>
+                        <ul className={`nav-list space-x-[4vw] -translate-x-8 ${toggleNav ? 'click' : ''}`}>
+                            <li className="nav-item hover:scale-125 transition-all hover:font-bold">Home</li>
+                            <li className="nav-item hover:scale-125 transition-all hover:font-bold">About me</li>
+                            <li className="nav-item hover:scale-125 transition-all hover:font-bold">Projects</li>
+                            <li className="nav-item hover:scale-125 transition-all hover:font-bold">Contact Me</li>
                         </ul>
                     )}
                 </div>

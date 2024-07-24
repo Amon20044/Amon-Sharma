@@ -6,7 +6,9 @@
     --transtime: .4s;
     --borderW8: .5px;
 }
-
+.sidenav{
+    font-size: calc(var(--h1Size)*.34);
+}
 .nav {
     font-size: calc(var(--h1Size)*.34);
     top: 0;

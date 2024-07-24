@@ -10,8 +10,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from 'lenis';
 import Skills from "@/components/Skills";
 import Services from "@/components/Services";
-
-gsap.registerPlugin(ScrollTrigger);
+import { SplitText } from 'gsap-trial/SplitText'
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function Home() {
 
@@ -70,9 +70,6 @@ export default function Home() {
     };
 }, []);
 
-useEffect(()=>{
-
-},[]);
   return (
     <div className={`body font-proza ${!winCheck && 'cursor-none'}`} >
       <div className={`landingpage block`}>
@@ -91,9 +88,9 @@ useEffect(()=>{
         </div>
 
         <div className="right">
-          <div className="upperBlock">
-            <div></div> {/* Animated circle */}
-            <p >
+          <div className="upperBlock animate">
+            <div className=""></div> {/* Animated circle */}
+            <p className="">
               "<span className="first">I</span> <span className='first'>M</span>ake your <span className='first underline'>Product</span> <span className='first'>C</span>ommunicate <span className='first'>E</span>fficiently"
             </p>
           </div>

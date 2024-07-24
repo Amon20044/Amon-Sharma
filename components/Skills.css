@@ -1,6 +1,5 @@
 /* Skills.css */
 .skills-container {
-    padding: 50px;
     background-color: var(--primaryColor);
     text-align: center; /* Center align text */
   }
@@ -12,7 +11,7 @@
   }
   
   .skill-section {
-    margin-bottom: 50px;
+    margin-bottom: 32px;
   }
   
   h1 {

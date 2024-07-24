@@ -1,0 +1,23 @@
+.graphicDesign .uiux{
+    scale: 95%;
+    display: inline-block;
+}
+.uiux:hover{
+    scale: 120%;
+}
+
+.backgroundPattern{
+
+    background: radial-gradient(transparent 79%, #aaa89332 80%);
+        background-size: 4em 4em;
+        background-color: var(--primaryColor);
+        opacity: 1
+}
+.backgroundPattern::before{
+    content: '';
+    top: 0;
+    width: 100vw;
+    height: 100px;
+    background: rgb(255,252,225);
+background: linear-gradient(180deg, rgba(255,252,225,1) 0%, rgba(255,252,225,1) 39%, rgba(255,252,225,0) 100%);
+}
