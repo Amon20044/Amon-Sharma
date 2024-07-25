@@ -10,8 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from 'lenis';
 import Skills from "@/components/Skills";
 import Services from "@/components/Services";
-import { SplitText } from 'gsap-trial/SplitText'
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
 
