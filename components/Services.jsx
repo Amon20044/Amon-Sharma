@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'
-import bg from '@/assets/Services/bgOverlay.svg';
-import { cn } from '@/lib/utils';
-import fe from '@/assets/Services/Frontend.svg';
+import fe from '@/assets/Services/FrontEnd.svg';
 import uu from '@/assets/Services/UIUX.svg';
 import gd from '@/assets/Services/GraphicDzyn.svg';
 import ms from '@/assets/Services/MyServices.svg';
