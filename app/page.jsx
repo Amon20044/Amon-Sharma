@@ -1,8 +1,10 @@
-"use client";
+// app/page.jsx or the corresponding page file
+'use client';
 import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from 'lenis';
+import Loader from "@/components/Loader"; // Import the Loader component
 import LandingPage from "@/components/LandingPage";
 import AboutMe from '@/components/AboutMe';
 import Skills from "@/components/Skills";
@@ -13,6 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const [winCheck, setWinCheck] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [isLoading, setIsLoading] = useState(true); // New state for loader
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -64,24 +67,31 @@ export default function Home() {
     };
   }, []);
 
+  const handleLoaderComplete = () => {
+    setIsLoading(false); // Hide loader when animation is complete
+  };
+
   return (
-    <div className={`body font-proza ${!winCheck && 'cursor-none'}`} >
-      <div><LandingPage winCheck={winCheck} cursorPosition={cursorPosition} className={'landingPage box-border'}/></div>
-      <div><AboutMe className={'box-border aboutme'}/></div>
-      <div><Skills className={'box-border skills'}/></div>
-      <div><Services className={'box-border services'}/></div>
-      <div><Project className={'box-border projectss'}/></div>
-      { winCheck &&
-        <div
-          className="fixed w-12 h-12 bg-white rounded-full pointer-events-none"
-          style={{
-            top: cursorPosition.y,
-            left: cursorPosition.x,
-            transform: 'translate(-50%, -50%)',
-            zIndex: 999,
-            mixBlendMode: 'difference'
-          }}
-        />}
-    </div>
+    <>
+      {isLoading && <Loader onLoadComplete={handleLoaderComplete} />}
+      <div className={`body font-proza ${!winCheck && 'cursor-none'}`} >
+        <div><LandingPage winCheck={winCheck} cursorPosition={cursorPosition} className={'landingPage box-border'}/></div>
+        <div><AboutMe className={'box-border aboutme'}/></div>
+        <div><Skills className={'box-border skills'}/></div>
+        <div><Services className={'box-border services'}/></div>
+        <div><Project className={'box-border projectss'}/></div>
+        { winCheck &&
+          <div
+            className="fixed w-12 h-12 bg-white rounded-full pointer-events-none"
+            style={{
+              top: cursorPosition.y,
+              left: cursorPosition.x,
+              transform: 'translate(-50%, -50%)',
+              zIndex: 999,
+              mixBlendMode: 'difference'
+            }}
+          />}
+      </div>
+    </>
   );
 }
