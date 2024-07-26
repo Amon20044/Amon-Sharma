@@ -46,7 +46,7 @@ const Navbar = () => {
         <div className="navUp">
             <nav className="nav">
                 <div className="sticky top-0 z-999 p-2">
-                    <div className="logo-container top-[4vh] mix-blend-difference">
+                    <div className="logo-container top-[4vh] mix-blend-difference z-999">
                         <Image
                             src={Logo}
                             alt="Amon Sharma"

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('https://fonts.cdnfonts.com/css/brogi');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,7 +39,7 @@ html.lenis, html.lenis body {
 }
 
 :root{
-  --primaryColor:#FFFCE1;
+  --primaryColor:#fffdee;
   --opacity:#fffce13f;
   --borderColor:black;
   --personaColor:#d9ff50;
@@ -53,34 +53,52 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+  background-color: var(--primaryColor);
 }
 
 .body {
-  width: 100vw; 
-  height: 100vh;
+  width: auto; 
+  height: auto;
+
   display: block;
   background-color: var(--primaryColor);
 }
 
+.body .projectss::after{
+  content: '';
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  top: 0;
+  background: blueviolet;
+}
+
 .image {
+  overflow: hidden;
   position: absolute;
   width: 40vw;
-  height: 120vh;
+  height: 100vh;
   left: 0;
   top: 0;
 }
 
 .right {
+  z-index: 0;
   right: 0;
-  position: absolute;
+  position:absolute;
   width: 60vw;
-  height: 85.8vh;
+  height: calc(100vh - 10vh - 53px);
   border-left: var(--borderW8) var(--borderColor) solid;
 }
 
 .landingPage {
+  overflow: hidden;
   display: flex;
   width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
 .head{
   font-size: 2rem;
@@ -103,18 +121,17 @@ body {
   margin-left: 5vw;
   color: white;
   width: 85%;
-  z-index: 4;
   mix-blend-mode:difference;
   line-height: 1em;
 }
 
 .upperBlock div {
   opacity: 0;
-  z-index: 0;
-  position: absolute;
+  
+  position: relative;
   height: 100px;
   width: 100px;
-  translate: -27vw;
+  translate: -27vw 0;
   border-radius: 50%;
   background-color: var(--personaColor);
   transform: scale(1);
@@ -122,11 +139,12 @@ body {
 }
 .upperBlock:hover div {
   opacity: 1;
-  transform: scale(20); /* Scale up on hover */
+  transform: scale(20)  translateX(2vw);
+  /* Scale up on hover */
   transition: opacity 0.2s ease-in-out, transform 0.6s ease-in-out;
 }
 .downBlock {
-  position: relative;
+  position:fixed;
   height: 40%;
   border-bottom: var(--borderW8) black solid;
   width: 100%;
@@ -143,7 +161,7 @@ body {
   height: 100%;
   background: rgb(255, 255, 255);
   mix-blend-mode: difference;
-  z-index: 2;
+  z-index: 1;
 }
 .upperBlock::after{
   content: '';
@@ -152,10 +170,10 @@ body {
   width: 15vw;
   background-color: rgb(255, 255, 255);
   mix-blend-mode: exclusion;
-  z-index: 3;
+  z-index: 1;
 }
 .downBlock{
-  position: relative;
+  position: absolute;
   height: 40%;
   border-bottom: var(--borderW8) black solid ;
   width: 100%;
@@ -210,9 +228,10 @@ body {
   body{
     cursor: auto;
   }
+  
 
   .downBlock .name{
-    translate: 0 -10vh;
+    translate: 0 -13vh;
     margin: 0;
     margin-bottom: 0;
   }
@@ -247,12 +266,13 @@ body {
   .downBlock{
     position: absolute;
     display: flex;
-    z-index: 4;
+    z-index: 1;
     width: 100vw;
-    height: 25vh;
-    translate: -70vw 0 ;
+    height: 30vh;
+    translate: calc(-70vw - 1px) 0 ;
     background-color: var(--primaryColor);
     border: black var(--borderW8) solid; 
+   
   }
   .right{
     position: absolute;
@@ -266,10 +286,6 @@ body {
     translate: 0vw 10vh;
   }
 
-  .AboutPage{
-    z-index: 5;
-    top: 73.8vh;
-  }
 }
 
 

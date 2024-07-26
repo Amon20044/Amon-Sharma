@@ -61,7 +61,7 @@ export default function AboutMe  ()  {
   }, []);
 
   return (
-    <div className='w-screen h-auto max-[850px]:h-auto overflow-hidden bg-black mg-20 flex flex-row max-[850px]:flex-col overflow-hidden '>
+    <div className=' relative w-screen h-auto max-[850px]:h-auto overflow-hidden py-4 bg-black mg-20 flex flex-row max-[850px]:flex-col overflow-hidden '>
       <div className='w-[15vw] h-[140vh] top-5 flex items-center content-center max-[850px]:w-screen max-[850px]:h-[15vh]'>
         <Image
           src={AboutMee}

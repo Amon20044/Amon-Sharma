@@ -14,35 +14,35 @@ gsap.registerEase(CustomEase);
 function Services() {
   
   useEffect(()=>{
-
+    const yValue = window.innerWidth >= 850 ? -50 : 100;
     const gd = gsap.timeline({
       scrollTrigger: {
         trigger: '.services',
-        start: 'top 0%',
-        end: 'bottom 100%',
+        start: 'top 20%',
+        end: 'bottom 40%',
         scrub: true,
       },
     });
     const uu = gsap.timeline({
       scrollTrigger: {
         trigger: '.services',
-        start: 'top 40%',
-        end: 'bottom 100%',
+        start: 'top 20%',
+        end: 'bottom 40%',
         scrub: true,
       },
     });
     const fe = gsap.timeline({
       scrollTrigger: {
         trigger: '.services',
-        start: 'top 0%',
-        end: 'bottom 100%',
+        start: 'top 20%',
+        end: 'bottom 40%',
         scrub: true,
       },
     });
     const simg = gsap.timeline({
       scrollTrigger: {
         trigger: '.services',
-        start: 'top 40%',
+        start: 'top 20%',
         end: 'bottom 100%',
         scrub: true,
       },
@@ -53,30 +53,29 @@ function Services() {
     gd
     .fromTo(
       '.graphicDesign',
-      { opacity: 0,rotateZ:-20, x: 100, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-      { opacity: 1,rotateZ:0, x: 0, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+      { opacity: 1, y: 100, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+      { opacity: 1, y: -40, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
     
     )
     fe
     .fromTo(
       '.Frontend',
-      { opacity: 0, y: 100, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-      { opacity: 1, y: 0, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+      { opacity: 1, y: 150, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+      { opacity: 1, y: -100, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
     
     )
     uu
     .fromTo(
       '.uiux',
-      { opacity: 0, rotateZ:20, x: -100, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-      { opacity: 1, rotateZ:0, x: 0, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+      { opacity: 1, y: 200, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+      { opacity: 1, y: -140, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
     
     )
-
     simg
     .fromTo(
       '.serviceimg',
-      { opacity: 1, scale:0, y:-100, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-      { opacity: 1, scale:1, y:50 , duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+      { opacity: 1, scale:0, y:0, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+      { opacity: 1, scale:1, y: yValue , duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
     
     )
     return () => {
@@ -91,7 +90,7 @@ function Services() {
     };
   },[]);
   return (<>
-    <div className='services w-screen h-auto backgroundPattern overflow-hidden translate-y-[70vh] pb-44 flex flex-col items-center justify-evenly'>
+    <div className='services w-screen h-auto backgroundPattern overflow-hidden pb-40  flex flex-col items-center justify-evenly'>
       <div className='my-20 serviceimg'>
       <Image
           src={ms}
@@ -99,7 +98,7 @@ function Services() {
         />
       </div>
       <div className='flex flex-row justify-between h-auto w-[80vw] max-[850px]:flex-col max-[850px]:items-center'>
-        <div className='uiux my-8'>
+        <div className='uiux mb-8'>
         <Image
           src={uu}
           alt={`UI UX`}

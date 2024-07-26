@@ -72,8 +72,8 @@ export default function Skills() {
       SkillAnimation
         .fromTo(
           '.SkillImage',
-          { opacity: 1, y: 0, duration:6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-          { opacity: 0, y: elemHeight, duration:6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+          { opacity: 1, y: -300, duration:6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+          { opacity: 0, y: elemHeight-500, duration:6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
         
         )
         
@@ -96,8 +96,8 @@ export default function Skills() {
   }, []);
 
   return (
-    <div className="skills-container flex align-middle items-center justify-center content-center h-auto max-[850px]:h-auto relative translate-y-[70vh] font">
-      <div className='absolute z-0 w-[100vw] h-auto left-0 SkillImage -top-2'>
+    <div className="skills-container flex block items-center py-24 justify-center content-center h-auto max-[850px]:h-auto font">
+      <div className='absolute z-0 w-[100vw] h-[100%] left-0 SkillImage '>
         <Image
           src={Skillss}
           alt='skills'

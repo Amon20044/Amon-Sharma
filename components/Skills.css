@@ -16,13 +16,13 @@
   
   h1 {
     font-family: 'Outfit', sans-serif;
-    color: var(--borderColor);
+    color: var(--brownColor);
     margin-bottom: 20px;
   }
   
   h2 {
     font-family: 'Brogi', sans-serif;
-    color: var(--borderColor);
+    color: var(--brownColor);
     margin-bottom: 20px;
   }
   
