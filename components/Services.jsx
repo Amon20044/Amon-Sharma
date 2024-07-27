@@ -75,7 +75,7 @@ function Services() {
     .fromTo(
       '.serviceimg',
       { opacity: 1, scale:1, y:-150, x:-600 , duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-      { opacity: 1, scale:1 ,y: yValue+100 ,x:600 , duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+      { opacity: 1, scale:1 ,y: yValue+100 ,x:100 , duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
     
     )
     return () => {

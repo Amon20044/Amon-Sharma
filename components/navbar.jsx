@@ -9,7 +9,7 @@ import SideNav from './Sidenav';
 
 gsap.registerPlugin(ScrollToPlugin);
 
-const Navbar = () => {
+export default function Navbar () {
     const [winCheck, setWinCheck] = useState(false);
     const [toggleNav, setToggleNav] = useState(false);
     const [showHamburger, setShowHamburger] = useState(false);
@@ -101,5 +101,3 @@ const Navbar = () => {
         </div>
     );
 };
-
-export default Navbar;
