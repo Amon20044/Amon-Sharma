@@ -1,4 +1,4 @@
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar";
 import LandingPageImage from "@/components/LandingPageImage";
 import LandingPageText from "@/components/LandingPageText";
 
@@ -8,9 +8,9 @@ export default function LandingPage({ winCheck, cursorPosition }) {
       <div className="navbar">
         <Navbar />
       </div>
-      <div className="h-auto  w-screen -z-10 overflow-hidden">
-      <LandingPageImage winCheck={winCheck} />
-      <LandingPageText winCheck={winCheck} />
+      <div className="h-auto w-screen -z-10 overflow-hidden">
+        <LandingPageImage winCheck={winCheck} />
+        <LandingPageText winCheck={winCheck} />
       </div>
     </div>
   );

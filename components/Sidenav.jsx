@@ -1,7 +1,10 @@
 'use client';
 import React, { useRef } from 'react';
 import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import './navbar.css';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function SideNav({ isOpen, onClose }) {
     const sideNavRef = useRef(null);
@@ -19,6 +22,12 @@ export default function SideNav({ isOpen, onClose }) {
         }
     }, [isOpen]);
 
+    const handleNavItemClick = (e, target) => {
+        e.preventDefault();
+        gsap.to(window, { duration: 1, scrollTo: target });
+        onClose(); // Close the side nav on item click
+    };
+
     return (
         <>
             <div ref={circleRef} className="circle"></div>
@@ -27,10 +36,11 @@ export default function SideNav({ isOpen, onClose }) {
                     <button onClick={onClose}>Close</button>
                 </div>
                 <ul className="p-4 mix-blend-difference sidenav ">
-                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800 sidenav">Home</a></li>
-                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800 sidenav">About</a></li>
-                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800 sidenav">Services</a></li>
-                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800 sidenav">Contact</a></li>
+                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800 sidenav" onClick={(e) => handleNavItemClick(e, '.home')}>Home</a></li>
+                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800 sidenav" onClick={(e) => handleNavItemClick(e, '.about')}>About</a></li>
+                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800 sidenav" onClick={(e) => handleNavItemClick(e, '.services')}>Services</a></li>
+                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800 sidenav" onClick={(e) => handleNavItemClick(e, '.projects')}>Projects</a></li>
+                    <li><a href="#" className="block py-2 px-3 text-white rounded hover:bg-slate-800 sidenav" onClick={(e) => handleNavItemClick(e, '.contact')}>Contact</a></li>
                 </ul>
             </nav>
             {isOpen && <div className="overlay fixed inset-0" onClick={onClose}></div>}

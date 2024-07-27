@@ -1,4 +1,3 @@
-// app/page.jsx or the corresponding page file
 'use client';
 import { useEffect, useState } from "react";
 import gsap from "gsap";
@@ -10,6 +9,7 @@ import AboutMe from '@/components/AboutMe';
 import Skills from "@/components/Skills";
 import Project from "@/components/Project";
 import Services from "@/components/Services";
+import Contact from "@/components/Contact";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -75,11 +75,11 @@ export default function Home() {
     <>
       {isLoading && <Loader onLoadComplete={handleLoaderComplete} />}
       <div className={`body font-proza ${!winCheck && 'cursor-none'}`} >
-        <div><LandingPage winCheck={winCheck} cursorPosition={cursorPosition} className={'landingPage box-border'}/></div>
-        <div><AboutMe className={'box-border aboutme'}/></div>
-        <div><Skills className={'box-border skills'}/></div>
-        <div><Services className={'box-border services'}/></div>
-        <div><Project className={'box-border projectss'}/></div>
+        <div className="home"><LandingPage winCheck={winCheck} cursorPosition={cursorPosition} /></div>
+        <div className="about"><AboutMe /></div>
+        <div className="services"><Services /></div>
+        <div className="projects"><Project /></div>
+        <div className="contact"><Contact /></div>
         { winCheck &&
           <div
             className="fixed w-12 h-12 bg-white rounded-full pointer-events-none"

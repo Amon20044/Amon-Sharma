@@ -8,6 +8,7 @@
     border-top: 1px solid var(--primaryColor);
     cursor: pointer;
     transition: all 0.2s;
+    color: var(--primaryColor);
 }
 .project:last-of-type{
     border-bottom: 1px solid var(--primaryColor);
@@ -37,6 +38,7 @@
 .project p{
     transition: all 0.4s;
     font-weight: 300;
+    color: var(--primaryColor);
 }
 
 

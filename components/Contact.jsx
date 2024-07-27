@@ -1,46 +1,123 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import Footer from './Footer';
+import my from '../assets/Services/my.svg';
 import './Contact.css'; // Ensure your CSS file is imported correctly
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
-  const [hovered, setHovered] = useState(false);
-  const [deltaX, setDeltaX] = useState(0);
-  const [deltaY, setDeltaY] = useState(0);
+  const [lineWidth, setLineWidth] = useState(0);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    organization: '',
+    services: '',
+    message: ''
+  });
 
-  const handleMouseEnter = () => {
-    setHovered(true);
+  const formFields = [
+    { id: 1, label: "What’s Your Name?", placeholder: 'John Bhai', type: 'text' },
+    { id: 2, label: "What’s Your Email?", placeholder: 'John@Bhai.com', type: 'email' },
+    { id: 3, label: "What's the name of your organization?", placeholder: 'John Bhai Adda', type: 'text' },
+    { id: 4, label: "What services are you looking for?", placeholder: 'John Bhai provide Design, Develop..', type: 'text' },
+    { id: 5, label: "Your message", placeholder: 'John Bhai Help me with', type: 'textarea' }
+  ];
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
-  const handleMouseLeave = () => {
-    setHovered(false);
-    setDeltaX(0);
-    setDeltaY(0);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log(formData);
   };
 
-  const handleMouseMove = (e) => {
-    const bounds = e.target.getBoundingClientRect();
-    const centerX = bounds.left + bounds.width / 2;
-    const centerY = bounds.top + bounds.height / 2;
+  useEffect(() => {
+    let animationValue = { value: 0 };
 
-    const deltaX = (centerX - e.clientX) * 0.1;
-    const deltaY = (centerY - e.clientY) * 0.1;
-
-    setDeltaX(deltaX);
-    setDeltaY(deltaY);
-  };
+    gsap.to(animationValue, {
+      value: 120,
+      scrollTrigger: {
+        trigger: ".contact",
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        
+      },
+      onUpdate: () => {
+        setLineWidth(animationValue.value);
+      }
+    });
+  }, []);
 
   return (
-    <div className='wrapper'>
-      <Link href="https://www.linkedin.com/in/amon-sharma-ab8a15216/" target="_blank" passHref>
-        <div className={`parallax-button ${hovered ? 'hovered' : ''}`}
-             onMouseEnter={handleMouseEnter}
-             onMouseLeave={handleMouseLeave}
-             onMouseMove={handleMouseMove}
-             style={{ transform: `translate3d(${deltaX}px, ${deltaY}px, 0)` }}>
-          <button className="slide">&nbsp;</button>
+    <div className='w-screen contact '>
+      <div className='w-screen bg-black h-auto flex flex-row max-[850px]:flex-col max-[850px]:px-20 py-8'>
+        <div className='w-full h-full bg-black text-white flex flex-col justify-center max-[850px]:px-0 pl-36 pr-12'>
+          <div className='mb-20'>
+            <Image
+              src={my} // Replace with the actual path to your image
+              alt="Profile"
+            />
+          </div>
+          
+          <div className='line h-1 mb-10' style={{ width: `${lineWidth}%` }}></div>
+          <div className='space-y-8'>
+            <Link href="mailto:amonsharma2000@gmail.com" legacyBehavior>
+              <a className='block text-lg overflow-hidden bg-[#D9FF50] text-[#2600AF] border p-3 hover:bg-[var(--primaryColor)] hover:text-[black] transition-all'>amonsharma2000@gmail.com</a>
+            </Link>
+            <Link href="tel:+918200962735" legacyBehavior>
+              <a className='block text-lg overflow-hidden bg-[#D9FF50] text-[#2600AF] border p-3 hover:bg-[var(--primaryColor)] hover:text-[black] transition-all'>+91 8200 9627 35</a>
+            </Link>
+          </div>
         </div>
-      </Link>
+        <div className='mt-0 max-[850px]:mt-20 w-full h-full bg-black text-[var(--primaryColor)] max-[850px]:px-0 pr-36 pl-12 flex flex-col justify-center'>
+          <form onSubmit={handleSubmit} className='space-y-4 form '>
+            {formFields.map((field, index) => (
+              <div className='form-group space-x-4 items-start justify-start' key={index}>
+                <div className='opacity-40'>{field.id}</div>
+                <div>
+                <label htmlFor={field.id}>{field.label}</label>
+                {field.type === 'textarea' ? (
+                  <textarea
+                    id={field.id}
+                    name={field.id}
+                    value={formData[field.id]}
+                    onChange={handleChange}
+                    className='w-full p-2 input-field text-2xl'
+                    placeholder={field.placeholder}
+                    required
+                  />
+                ) : (
+                  <input
+                    type={field.type}
+                    id={field.id}
+                    name={field.id}
+                    value={formData[field.id]}
+                    onChange={handleChange}
+                    className='w-full p-2 input-field'
+                    placeholder={field.placeholder}
+                    required
+                  />
+                  
+                )}
+                </div>
+              </div>
+            ))}
+            <button type="submit" className='bg-[#D9FF50] text-[#2600AF] p-2 max-[850px]:px-2 hover:bg-[var(--primaryColor)] hover:text-[black] hover:scale-110 transition-all'>Submit</button>
+          </form>
+        </div>
+      </div>
+      <Footer/>
     </div>
   );
 };

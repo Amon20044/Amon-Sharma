@@ -1,23 +1,24 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import Logo from '@/assets/logo.svg'; // Ensure the path is correct
 import Image from 'next/image';
-import  SideNav  from './Sidenav';
+import SideNav from './Sidenav';
 
-// Define the component with TypeScript
+gsap.registerPlugin(ScrollToPlugin);
+
 const Navbar = () => {
     const [winCheck, setWinCheck] = useState(false);
     const [toggleNav, setToggleNav] = useState(false);
     const [showHamburger, setShowHamburger] = useState(false);
 
     useEffect(() => {
-        // Update the winCheck state based on window width
         const updateWinCheck = () => {
             setWinCheck(window.innerWidth >= 850);
         };
 
-        // Handle scroll event to show/hide hamburger menu
         const handleScroll = () => {
             const navElement = document.querySelector('.navUp');
             if (navElement) {
@@ -30,16 +31,28 @@ const Navbar = () => {
         window.addEventListener('resize', updateWinCheck);
         window.addEventListener('scroll', handleScroll);
 
-        // Cleanup event listeners on component unmount
         return () => {
             window.removeEventListener('resize', updateWinCheck);
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
-    // Toggle navigation on hamburger click
+    useEffect(() => {
+        if (showHamburger) {
+            gsap.fromTo('.hamburger', { scale: 0 }, { scale: 1, duration: 0.5, ease: 'back.out(1.7)' });
+        } else {
+            gsap.fromTo('.hamburger', { scale: 1 }, { scale: 0, duration: 0.5, ease: 'back.in(1.7)' });
+        }
+    }, [showHamburger]);
+
     const handleBarClick = () => {
         setToggleNav(prevState => !prevState);
+    };
+
+    const handleNavItemClick = (e, target) => {
+        e.preventDefault();
+        gsap.to(window, { duration: 1, scrollTo: target });
+        setToggleNav(false); // Close the side nav on item click
     };
 
     return (
@@ -65,10 +78,11 @@ const Navbar = () => {
                     </div>
                     {winCheck && (
                         <ul className={`nav-list space-x-[4vw] -translate-x-8 ${toggleNav ? 'click' : ''}`}>
-                            <li className="nav-item hover:scale-125 transition-all hover:font-bold">Home</li>
-                            <li className="nav-item hover:scale-125 transition-all hover:font-bold">About me</li>
-                            <li className="nav-item hover:scale-125 transition-all hover:font-bold">Projects</li>
-                            <li className="nav-item hover:scale-125 transition-all hover:font-bold">Contact Me</li>
+                            <li className="nav-item hover:scale-105 transition-all " onClick={(e) => handleNavItemClick(e, '.home')}>Home</li>
+                            <li className="nav-item hover:scale-105 transition-all " onClick={(e) => handleNavItemClick(e, '.about')}>About me</li>
+                            <li className="nav-item hover:scale-105 transition-all " onClick={(e) => handleNavItemClick(e, '.services')}>Services</li>
+                            <li className="nav-item hover:scale-105 transition-all " onClick={(e) => handleNavItemClick(e, '.projects')}>Projects</li>
+                            <li className="nav-item hover:scale-105 transition-all " onClick={(e) => handleNavItemClick(e, '.contact')}>Contact Me</li>
                         </ul>
                     )}
                 </div>
@@ -76,7 +90,7 @@ const Navbar = () => {
             <SideNav isOpen={toggleNav} onClose={() => setToggleNav(false)} />
             {showHamburger && (
                 <div
-                    className="hamburger fixed top-[4vh] right-8 bars flex-col right-[4vw] w-8 h-8 space-y-2  rounded-full mix-blend-difference flex items-center justify-center z-50"
+                    className="hamburger fixed top-[4vh] right-8 bars flex-col right-[4vw] w-8 h-8 space-y-2 rounded-full mix-blend-difference flex items-center justify-center z-50"
                     onClick={handleBarClick}
                 >
                     <div></div>

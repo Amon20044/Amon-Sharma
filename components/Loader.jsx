@@ -12,19 +12,19 @@ export default function Loader({ onLoadComplete }) {
     tl.to(".loader-cube", {
       rotationY: 360,
       rotationX: 360,
-      duration: 3,
+      duration: 2,
       repeat: -1, // Continue rotating until exit animation
       ease: "power2.inOut",
     });
 
     // Smooth zoom-out and fade out
     tl.to(".loader-container", {
-      scale: 0,
+      scale: 100,
       opacity: 0,
       duration: 1,
       ease: "power2.inOut",
       onComplete: onLoadComplete,
-    }, "+=3"); // Start zoom-out after rotation
+    }, "+=2"); // Start zoom-out after rotation
 
   }, [onLoadComplete]);
 

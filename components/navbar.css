@@ -7,10 +7,10 @@
     --borderW8: .5px;
 }
 .sidenav{
-    font-size: calc(var(--h1Size)*.34);
+    font-size: calc(var(--h1Size)*.31);
 }
 .nav {
-    font-size: calc(var(--h1Size)*.34);
+    font-size: calc(var(--h1Size)*.31);
     top: 0;
     display: flex;
     justify-content: space-between;
@@ -129,4 +129,27 @@
 
 .side-nav.open {
     transform: translateX(0);
+}
+.nav-list li {
+    color: black;
+    font-size:calc(.25* var(--h1Size));
+    font-weight: 400;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-list li::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; /* Adjust as needed */
+    left: 50%;
+    width: 0;
+    height: 2px; /* Adjust as needed */
+    background: rgb(0, 0, 0);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-list li:hover::after {
+    width: 100%; /* Adjust as needed */
+    left: calc(0% ); /* Adjust as needed, width / 2 */
 }

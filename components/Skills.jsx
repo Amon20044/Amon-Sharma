@@ -96,7 +96,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <div className="skills-container flex block items-center py-24 justify-center content-center h-auto max-[850px]:h-auto font">
+    <div className="skills-container flex block items-center py-2 justify-center content-center h-auto max-[850px]:h-auto font">
       <div className='absolute z-0 w-[100vw] h-[100%] left-0 SkillImage '>
         <Image
           src={Skillss}
