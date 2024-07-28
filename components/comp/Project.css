@@ -9,6 +9,7 @@
     cursor: pointer;
     transition: all 0.2s;
     color: var(--primaryColor);
+    overflow: hidden;
 }
 .project:last-of-type{
     border-bottom: 1px solid var(--primaryColor);
@@ -41,16 +42,37 @@
     color: var(--primaryColor);
 }
 
+.project::after{
+    z-index: 88;
+    position: absolute;
+    content: '';
+    width: 80vw;
+    height: 0px;
+    left: calc(59.5vw - 50%);
+    transition: .4s;
+    background: var(--personaColor);
+    mix-blend-mode:difference ;
+}
 
+.project:hover::after{
+    height: 20%;
+    background: var(--purpleColor);
+    transition: .4s;
+}
 @media (max-width:900px){
     .project{
         padding: 25px 50px 25px 50px;
         flex-direction: column;   
+    }
+    .project:hover::after{
+        height: 0px;
+        background: var(--purpleColor);
+        transition: .4s;
     }
 }
 @media (max-width:600px){
     .project{
         padding: 16px 16px 16px 16px;
         flex-direction: column;   
-    }
+    }   
 }

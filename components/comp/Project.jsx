@@ -26,7 +26,7 @@ export default function Project({ index, title, setModal, desc, url, src, color 
     <Link href={url} legacyBehavior>
       <a
         className="project"
-        onMouseEnter={() => setModal({ active: true, index })}
+        onMouseEnter={() => setModal({ active: isMobile ? false : true, index })}
         onMouseLeave={() => setModal({ active: false, index })}
         target="_blank"
         rel="noopener noreferrer"

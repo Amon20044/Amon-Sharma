@@ -23,9 +23,9 @@ export default function Contact() {
   const formFields = [
     { id: 1, label: "What’s Your Name?", placeholder: 'John Bhai', type: 'text' },
     { id: 2, label: "What’s Your Email?", placeholder: 'John@Bhai.com', type: 'email' },
-    { id: 3, label: "What's the name of your organization?", placeholder: 'John Bhai Adda', type: 'text' },
-    { id: 4, label: "What services are you looking for?", placeholder: 'John Bhai provide Design, Develop..', type: 'text' },
-    { id: 5, label: "Your message", placeholder: 'John Bhai Help me with', type: 'textarea' }
+    { id: 3, label: "What's the name of your organization?", placeholder: 'John Bhai ka Adda', type: 'text' },
+    { id: 4, label: "What services are you looking for?", placeholder: 'I need Design, Development...', type: 'text' },
+    { id: 5, label: "Your message", placeholder: 'I need Your Help with...', type: 'textarea' }
   ];
 
   const handleChange = (e) => {
@@ -84,7 +84,7 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className='space-y-4 form '>
             {formFields.map((field, index) => (
               <div className='form-group space-x-4 items-start justify-start' key={index}>
-                <div className='opacity-40'>{field.id}</div>
+                <div className='opacity-50'>{field.id}</div>
                 <div>
                 <label htmlFor={field.id}>{field.label}</label>
                 {field.type === 'textarea' ? (
@@ -104,7 +104,7 @@ export default function Contact() {
                     name={field.id}
                     value={formData[field.id]}
                     onChange={handleChange}
-                    className='w-full p-2 input-field '
+                    className='w-full p-2 input-field'
                     placeholder={field.placeholder}
                     required
                   />

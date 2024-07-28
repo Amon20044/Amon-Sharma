@@ -4,7 +4,7 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-black border-t-2 border-blue-50 text-[var(--primaryColor)] pt-12 pb-12 flex  justify-between items-center px-20 max-[850px]:justify-between max-[850px]:px-20">
+        <footer className="bg-black border-t-2 border-blue-50 text-[var(--primaryColor)] pt-12 pb-12 flex  justify-between items-center px-20 max-[850px]:justify-between max-[850px]:px-5">
             <div className="space-x-8 max-[850px]:flex-col-reverse flex-row flex max-[850px]:space-x-0">
                 <div>
                 {currentYear} &copy; Edition
