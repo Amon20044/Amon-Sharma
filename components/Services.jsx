@@ -15,7 +15,7 @@ function Services() {
   
   useEffect(()=>{
     const yValue = 100;
-    const start = window.innerWidth <= 850 ? 'top 0%' : 'top 20%' ;
+    const start = window.innerWidth <= 850 ? 'top 0%' : 'top 90%' ;
     const end = window.innerWidth <= 850 ? 'bottom 110%' : 'bottom 80%' ;
     const y = window.innerWidth <= 850 ? 150 : 0;
     const gd = gsap.timeline({
@@ -56,22 +56,22 @@ function Services() {
     gd
     .fromTo(
       '.graphicDesign',
-      { opacity: 0, y: y+100, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-      { opacity: 1, y: y, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+      { opacity: 1, y: y+200, duration:1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+      { opacity: 1, y: y, duration:1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
     
     )
     fe
     .fromTo(
       '.Frontend',
-      { opacity: 0, y: y+150, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-      { opacity: 1, y: y, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+      { opacity: 1, y: y+600, duration:1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+      { opacity: 1, y: y, duration:1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
     
     )
     uu
     .fromTo(
       '.uiux',
-      { opacity: 0, y: y+200, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-      { opacity: 1,  y: y, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+      { opacity: 1, y: y+800, duration:1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+      { opacity: 1,  y: y, duration:1, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
     
     )
     simg

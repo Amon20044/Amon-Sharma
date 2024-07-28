@@ -48,7 +48,7 @@ export default function Loader({ onLoadComplete }) {
         .loader-cube {
           width: 100px;
           height: 100px;
-          background-color: white;
+          background-color: var(--primaryColor);
           transform-style: preserve-3d;
           transform: rotateX(0) rotateY(0);
           position: relative;
@@ -59,7 +59,7 @@ export default function Loader({ onLoadComplete }) {
           position: absolute;
           width: 100px;
           height: 100px;
-          background-color: white;
+          background-color: var(--primaryColor);
         }
         .loader-cube::before {
           transform: rotateY(90deg);
