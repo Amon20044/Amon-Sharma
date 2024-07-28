@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import fe from '@/assets/Services/FrontEnd.svg';
-import uu from '@/assets/Services/UIUX.svg';
-import gd from '@/assets/Services/GraphicDzyn.svg';
+import fe from '@/assets/Services/FrontEnd.png';
+import uu from '@/assets/Services/UIUX.png';
+import gd from '@/assets/Services/GraphicDzyn.png';
 import ms from '@/assets/Services/MyServices.svg';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -14,28 +14,31 @@ gsap.registerEase(CustomEase);
 function Services() {
   
   useEffect(()=>{
-    const yValue = window.innerWidth >= 850 ? -50 : 100;
+    const yValue = 100;
+    const start = window.innerWidth <= 850 ? 'top 0%' : 'top 20%' ;
+    const end = window.innerWidth <= 850 ? 'bottom 110%' : 'bottom 80%' ;
+    const y = window.innerWidth <= 850 ? 150 : 0;
     const gd = gsap.timeline({
       scrollTrigger: {
         trigger: '.services',
-        start: 'top 20%',
-        end: 'bottom 80%',
+        start: start,
+        end: end,
         scrub: true,
       },
     });
     const uu = gsap.timeline({
       scrollTrigger: {
         trigger: '.services',
-        start: 'top 20%',
-        end: 'bottom 80%',
+        start: start,
+        end:  end,
         scrub: true,
       },
     });
     const fe = gsap.timeline({
       scrollTrigger: {
         trigger: '.services',
-        start: 'top 20%',
-        end: 'bottom 80%',
+        start: start,
+        end: end,
         scrub: true,
       },
     });
@@ -53,22 +56,22 @@ function Services() {
     gd
     .fromTo(
       '.graphicDesign',
-      { opacity: 0, y: 100, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-      { opacity: 1, y: 0, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+      { opacity: 0, y: y+100, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+      { opacity: 1, y: y, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
     
     )
     fe
     .fromTo(
       '.Frontend',
-      { opacity: 0, y: 150, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-      { opacity: 1, y: 0, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+      { opacity: 0, y: y+150, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+      { opacity: 1, y: y, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
     
     )
     uu
     .fromTo(
       '.uiux',
-      { opacity: 0, y: 200, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-      { opacity: 1, y: 0, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
+      { opacity: 0, y: y+200, duration:.6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
+      { opacity: 1,  y: y, duration:.3, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
     
     )
     simg
@@ -90,7 +93,7 @@ function Services() {
     };
   },[]);
   return (<>
-    <div className='services w-screen overflow-x-hidden h-auto backgroundPattern pb-40  flex flex-col items-center justify-evenly'>
+    <div className='services w-screen overflow-hidden h-auto backgroundPattern pb-40  flex flex-col items-center justify-evenly'>
       <div className='my-20 w-[180vw] h-auto bg-black m-0 p-0 serviceimg'>
       <Image
           src={ms}
@@ -104,18 +107,21 @@ function Services() {
         <Image
           src={uu}
           alt={`UI UX`}
+          className='scale-[1.7] -translate-x-2'
         />
         </div>
         <div className='Frontend mb-8 mx-8'>
         <Image
           src={fe}
           alt={`FrontEnd`}
+          className='scale-[1.7]'
         />
         </div>
         <div className='graphicDesign mb-8 mx-8'>
         <Image
           src={gd}
           alt={`graphic design`}
+          className='scale-[1.7]'
         />
         </div>
       </div>

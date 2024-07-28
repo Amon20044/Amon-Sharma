@@ -42,10 +42,15 @@ html.lenis, html.lenis body {
   --primaryColor:#fffce8;
   --opacity:#fffce13f;
   --borderColor:black;
-  --personaColor:#d9ff50;
+  --personaColor:#D9FF50;
+  --purpleColor:#7B5DE6;
   --h1Size : 4em;
   --borderW8:1px;
 }
+/* text-[var(--personaColor)] */
+/* text-[var(--purpleColor)] */
+/* bg-[var(--personaColor)] */
+/* bg-[var(--purpleColor)] */
 
 body {
   cursor: none;
@@ -168,7 +173,7 @@ body {
   height: 65%;
   width: 15vw;
   background-color: rgb(255, 255, 255);
-  mix-blend-mode: exclusion;
+  mix-blend-mode: difference;
   z-index: 1;
 }
 .downBlock{

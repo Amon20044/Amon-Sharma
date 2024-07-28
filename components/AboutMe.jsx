@@ -59,7 +59,10 @@ export default function AboutMe  ()  {
       designAnimation.kill();
     };
   }, []);
-
+/* text-[var(--personaColor)] */
+/* text-[var(--purpleColor)] */
+/* bg-[var(--personaColor)] */
+/* bg-[var(--purpleColor)] */
   return (
     <div className=' relative w-screen h-auto max-[850px]:h-auto overflow-hidden -translate-y-5 m-0 bg-black py-8 flex flex-row max-[850px]:flex-col overflow-hidden '>
       <div className='w-[15vw] h-[140vh] top-5 flex items-center content-center max-[850px]:w-screen max-[850px]:h-[15vh]'>
@@ -87,11 +90,12 @@ export default function AboutMe  ()  {
           <div className='h-[60%] w-[100%] flex flex-col items-center justify-around my-5'>
           <div className='w-full h-[2px] bgcolor my-5'></div>
             <p className='text-[1.35rem] leading-snug  font-light max-[850px]:text-[1.1rem] my-5 font-extralight'>
-              <span className='first'>I</span> am <span className='bg-[#D9FF50] text-[#2600AF] font-bold'>Amon Sharma</span> from Vadodara currently pursuing B.Tech CSE in <span className='bg-[#2600AF] text-[#D9FF50] font-bold'>IIIT Vadodara.</span> 
+              <span className='first'>I</span> am <span className='bg-[var(--personaColor)] text-[var(--purpleColor)] font-bold'>Amon Sharma</span> from Vadodara currently pursuing B.Tech CSE in <span className=' bg-[var(--purpleColor)] text-[var(--personaColor)] font-bold'>IIIT Vadodara.</span> 
             </p>
             <div className='w-full h-[.1px] bgcolor my-5'></div>
             <div className='text-[1.35rem] leading-snug font-light max-[850px]:text-[1.1rem] my-5 font-extralight'>
-              <span className='font-bold text-[2rem]'><span className='first'>Y</span>ou</span> can call me <span className='first font-bold'>Dzyno (or D-Zyner) </span>, not Dino because I am too old from my skills and young from my age and fitness. Jokes aside, I am a <span className='font-bold'><i>Techy</i></span>, <span className='font-bold'><i>Sleeky</i></span>, <span className='font-bold'><i>Visual</i></span>, <span className='font-bold'><i>Market</i></span>, <span className='font-bold'><i>Creation lover</i></span>. I love to create epic stories for your products, whether it's <span className='font-bold'><i>visually</i></span>, through <span className='font-bold'><i>video creation</i></span>, or as a <span className='font-bold'><i>content creator</i></span> for your next successful project. With expertise in <span className='font-bold'><i>Frontend Development</i></span>, <span className='font-bold'><i>UI/UX</i></span>, <span className='font-bold'><i>Graphics Design</i></span>, <span className='font-bold'><i>Marketing</i></span>, and <span className='font-bold'><i>Content Creation</i></span>, I can help bring your vision to life. <span className='bg-[#D9FF50] text-[#2600AF] font-bold'> Let's collaborate </span> and make your brand stand out in the <span className='font-black'>market!</span> 
+              <span className='font-bold text-[2rem]'><span className='first'>Y</span>ou</span> can call me <span className='first font-bold'>Dzyno (or D-Zyner) </span>, not Dino because I am too old from my skills and young from my age and fitness. Jokes aside, I am a <span className='font-bold'><i>Techy</i></span>, <span className='font-bold'><i>Sleeky</i></span>, <span className='font-bold'><i>Visual</i></span>, <span className='font-bold'><i>Market</i></span>, <span className='font-bold'><i>Creation lover</i></span>. I love to create epic stories for your products, whether it's <span className='font-bold'><i>visually</i></span>, through <span className='font-bold'><i>video creation</i></span>, or as a <span className='font-bold'><i>content creator</i></span> for your next successful project. With expertise in <span className='font-bold'><i>Frontend Development</i></span>, <span className='font-bold'><i>UI/UX</i></span>, <span className='font-bold'><i>Graphics Design</i></span>, <span className='font-bold'><i>Marketing</i></span>, and <span className='font-bold'><i>Content Creation</i></span>, I can help bring your vision to life. 
+              <span className='bg-[var(--personaColor)] text-[var(--purpleColor)] font-bold'> Let's collaborate </span> and make your brand stand out in the <span className='font-black'>market!</span> 
             </div>
             <div className='w-full h-[2px] bgcolor my-5'></div>
             <div className='design h-[65vw] w-[44vw] absolute translate-y-[0vh] -z-10 max-[850px]:translate-y-[50vh] max-[850px]:h-[55vh] max-[850px]:w-[100vw] right-0 top-0'>

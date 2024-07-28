@@ -61,7 +61,7 @@ export default function Contact() {
 
   return (
     <div className='w-screen contact '>
-      <div className='w-screen bg-black h-auto flex flex-row max-[850px]:flex-col max-[850px]:px-20 py-8'>
+      <div className='w-screen bg-black h-auto flex flex-row max-[850px]:flex-col max-[850px]:px-5 py-8'>
         <div className='w-full h-full bg-black text-white flex flex-col justify-center max-[850px]:px-0 pl-36 pr-12'>
           <div className='mb-20'>
             <Image
@@ -73,10 +73,10 @@ export default function Contact() {
           <div className='line h-1 mb-10' style={{ width: `${lineWidth}%` }}></div>
           <div className='space-y-8'>
             <Link href="mailto:amonsharma2000@gmail.com" legacyBehavior>
-              <a className='block text-lg overflow-hidden bg-[#D9FF50] text-[#2600AF] border p-3 hover:bg-[var(--primaryColor)] hover:text-[black] transition-all'>amonsharma2000@gmail.com</a>
+              <a className='block text-lg overflow-hidden bg-[var(--personaColor)] text-[var(--purpleColor)] font-normal border p-3 hover:bg-[var(--primaryColor)] hover:text-[black] transition-all'>amonsharma2000@gmail.com</a>
             </Link>
             <Link href="tel:+918200962735" legacyBehavior>
-              <a className='block text-lg overflow-hidden bg-[#D9FF50] text-[#2600AF] border p-3 hover:bg-[var(--primaryColor)] hover:text-[black] transition-all'>+91 8200 9627 35</a>
+              <a className='block text-lg overflow-hidden bg-[var(--personaColor)] text-[var(--purpleColor)] font-normal border p-3 hover:bg-[var(--primaryColor)] hover:text-[black] transition-all'>+91 8200 9627 35</a>
             </Link>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function Contact() {
                     name={field.id}
                     value={formData[field.id]}
                     onChange={handleChange}
-                    className='w-full p-2 input-field'
+                    className='w-full p-2 input-field '
                     placeholder={field.placeholder}
                     required
                   />
@@ -113,7 +113,7 @@ export default function Contact() {
                 </div>
               </div>
             ))}
-            <button type="submit" className='bg-[#D9FF50] text-[#2600AF] p-2 max-[850px]:px-2 hover:bg-[var(--primaryColor)] hover:text-[black] hover:scale-110 transition-all'>Submit</button>
+            <button type="submit" className='bg-[var(--personaColor)] text-[var(--purpleColor)] font-black p-2 max-[850px]:px-2 hover:bg-[var(--primaryColor)] hover:text-[black] hover:scale-110 transition-all'>Submit</button>
           </form>
         </div>
       </div>
