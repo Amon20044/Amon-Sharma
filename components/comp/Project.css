@@ -56,7 +56,7 @@
 
 .project:hover::after{
     height: 20%;
-    background: var(--purpleColor);
+    background: #ffffff;
     transition: .4s;
 }
 @media (max-width:900px){
