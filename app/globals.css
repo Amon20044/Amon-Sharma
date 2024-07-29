@@ -82,7 +82,8 @@ body {
 .image {
   overflow: hidden;
   position: absolute;
-  width: 40vw;
+  width: calc(100vw - 60vw);
+  left: 0;
   height: 100vh;
   left: 0;
   top: 0;
