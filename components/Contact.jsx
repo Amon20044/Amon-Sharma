@@ -22,9 +22,9 @@ export default function Contact() {
   });
 
   const formFields = [
-    { id: 'name', label: "What’s Your Name?", placeholder: 'John Bhai', type: 'text' },
-    { id: 'email', label: "What’s Your Email?", placeholder: 'John@Bhai.com', type: 'email' },
-    { id: 'organization', label: "What's the name of your organization?", placeholder: 'John Bhai ka Adda', type: 'text' },
+    { id: 'name', label: "What’s Your Name?", placeholder: 'John Doe', type: 'text' },
+    { id: 'email', label: "What’s Your Email?", placeholder: 'John@Doe.com', type: 'email' },
+    { id: 'organization', label: "What's the name of your organization?", placeholder: 'John Doe Company', type: 'text' },
     { id: 'services', label: "What services are you looking for?", placeholder: 'I need Design, Development...', type: 'text' },
     { id: 'message', label: "Your message", placeholder: 'I need Your Help with...', type: 'textarea' }
   ];
