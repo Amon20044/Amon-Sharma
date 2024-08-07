@@ -7,12 +7,12 @@ import my from '../assets/Services/my.svg';
 import './Contact.css'; // Ensure your CSS file is imported correctly
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useForm, ValidationError } from '@formspree/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
   const [lineWidth, setLineWidth] = useState(0);
-  const [mail, setMail] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,29 +36,7 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const mailTemplate = `
-      Dear Amon,
-
-      I hope this message finds you well. Below are the details of my inquiry:
-
-      Name: ${formData.name}
-      Email: ${formData.email}
-      Organization: ${formData.organization}
-      Services Required: ${formData.services}
-
-      Message:
-      ${formData.message}
-
-      Thank you for your attention to this matter. I look forward to your response.
-
-      Best regards,
-      ${formData.name}
-    `;
-    setMail(mailTemplate);
-    console.log(mailTemplate);
-  };
+  const [state, handleSubmit] = useForm("xjkbrkan");
 
   useEffect(() => {
     let animationValue = { value: 0 };
@@ -93,9 +71,6 @@ export default function Contact() {
             <Link href="mailto:amonsharma2000@gmail.com" legacyBehavior>
               <a className='block text-lg overflow-hidden bg-[var(--personaColor)] text-[var(--purpleColor)] font-normal border p-3 hover:bg-[var(--primaryColor)] hover:text-[black] transition-all'>amonsharma2000@gmail.com</a>
             </Link>
-            <Link href="tel:+918200962735" legacyBehavior>
-              <a className='block text-lg overflow-hidden bg-[var(--personaColor)] text-[var(--purpleColor)] font-normal border p-3 hover:bg-[var(--primaryColor)] hover:text-[black] transition-all'>+91 8200 9627 35</a>
-            </Link>
           </div>
         </div>
         <div className='mt-0 max-[850px]:mt-20 w-full h-full bg-black text-[var(--primaryColor)] max-[850px]:px-0 pr-36 pl-12 flex flex-col justify-center'>
@@ -127,11 +102,19 @@ export default function Contact() {
                       required
                     />
                   )}
+                  <ValidationError 
+                    prefix={field.label} 
+                    field={field.id}
+                    errors={state.errors}
+                  />
                 </div>
               </div>
             ))}
-            <button type="submit" className='bg-[var(--personaColor)] text-[var(--purpleColor)] font-black p-2 max-[850px]:px-2 hover:bg-[var(--primaryColor)] hover:text-[black] hover:scale-110 transition-all'>Submit</button>
+            <button type="submit" disabled={state.submitting} className='bg-[var(--personaColor)] text-[var(--purpleColor)] font-black p-2 max-[850px]:px-2 hover:bg-[var(--primaryColor)] hover:text-[black] hover:scale-110 transition-all'>Submit</button>
           </form>
+          {state.succeeded && 
+          <div className='text-[var(--personaColor)] bg-[var(--purpleColor)] m-4 p-4'>Thanks For Submitting! I will contact you soon</div>
+          }
         </div>
       </div>
       <Footer/>
