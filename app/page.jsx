@@ -10,6 +10,8 @@ import Skills from "@/components/Skills";
 import Project from "@/components/Project";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
+import PerformanceOptimizer from "@/components/PerformanceOptimizer";
+import ProjectSchemaMarkup from "@/components/ProjectSchemaMarkup";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -73,13 +75,26 @@ export default function Home() {
 
   return (
     <>
+      <PerformanceOptimizer />
+      <ProjectSchemaMarkup projects={[
+        {
+          title: "Project Portfolio Website",
+          description: "A modern, responsive portfolio website built with Next.js and advanced animations",
+          dateCreated: "2024-01-01",
+          keywords: ["Next.js", "React", "GSAP", "Tailwind CSS", "Portfolio"],
+          technologies: ["JavaScript", "React", "Next.js", "CSS", "GSAP"],
+          image: "/assets/photo.png"
+        }
+        // Add more projects here as needed
+      ]} />
       {isLoading && <Loader onLoadComplete={handleLoaderComplete} />}
       <div className={`body font-proza ${!winCheck && 'cursor-none'}`} >
-        <div className="home"><LandingPage winCheck={winCheck} cursorPosition={cursorPosition} /></div>
-        <div className="about"><AboutMe /></div>
-        <div className="services"><Services /></div>
-        <div className="projects"><Project /></div>
-        <div className="contact"><Contact /></div>
+        <div className="home" id="home"><LandingPage winCheck={winCheck} cursorPosition={cursorPosition} /></div>
+        <div className="about" id="about"><AboutMe /></div>
+        <div className="skills" id="skills"><Skills /></div>
+        <div className="services" id="services"><Services /></div>
+        <div className="projects" id="projects"><Project /></div>
+        <div className="contact" id="contact"><Contact /></div>
         { winCheck &&
           <div
             className="fixed w-12 h-12 bg-white rounded-full pointer-events-none"

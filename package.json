@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@formspree/react": "^2.5.1",
@@ -19,12 +20,14 @@
     "lenis": "^1.1.6",
     "lucide-react": "^0.414.0",
     "next": "14.2.5",
+    "next-sitemap": "^4.2.3",
     "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "resend": "^3.5.0",
     "sass": "^1.77.8",
+    "sharp": "^0.34.2",
     "split-type": "^0.3.4",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
