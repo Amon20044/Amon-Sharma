@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg
-  width="800"
-  height="780"
+  width="100%"
+  height="100%"
   viewBox="0 0 800 780"
+  preserveAspectRatio="xMidYMid meet"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -22,7 +23,7 @@
       --shadow: 0 10px 22px rgba(0,0,0,0.14); /* Soft shadow */
     }
 
-    text { font-family: 'SF Pro Display', system-ui, -apple-system, sans-serif; }
+    text { font-family:  Tahoma, Geneva, Verdana, sans-serif ; }
     .code { font-family: 'SF Mono', 'Fira Code', monospace; }
 
     .card {
