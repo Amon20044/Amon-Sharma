@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  width="800"
+  height="780"
+  viewBox="0 0 800 780"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <defs>
+    <circle id="dot" r="4" fill="#ffffff" />
+  </defs>
+
+  <style><![CDATA[
+    /* Theme: Yellow/Blue */
+    :root {
+      --bg: #ffd93b;         /* Bright Yellow Background */
+      --card: #ffe97a;       /* Lighter Yellow Card */
+      --bubble: #1f7ae0;     /* Primary Blue Bubble */
+      --bubble-text: #ffffff; /* White Text */
+      --accent: #004d99;      /* Darker Blue Accent for text links/outline */
+      --outline: #f4c842;    /* Outline for the card */
+      --shadow: 0 10px 22px rgba(0,0,0,0.14); /* Soft shadow */
+    }
+
+    text { font-family: 'SF Pro Display', system-ui, -apple-system, sans-serif; }
+    .code { font-family: 'SF Mono', 'Fira Code', monospace; }
+
+    .card {
+      filter: drop-shadow(var(--shadow));
+    }
+
+    .bubble-container {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+      /* Animation: Bouncy Pop-in */
+      animation: pop-in-out 0.8s ease-out forwards;
+    }
+
+    .icon {
+      opacity: 0;
+      /* Animation: Bouncy Pop-in */
+      animation: pop-icon-in 1.0s ease-in-out forwards;
+    }
+
+    @keyframes pop-in-out {
+      0%   { opacity: 0; transform: translateY(8px) scale(0.98); }
+      70%  { opacity: 1; transform: translateY(0px) scale(1.02); }
+      100% { opacity: 1; transform: translateY(0px) scale(1); }
+    }
+    @keyframes pop-icon-in {
+      0%   { opacity: 0; transform: translate(88, 640) scale(0.0); }
+      70%  { opacity: 1; transform: translate(88, 620) scale(1.02); }
+      100% { opacity: 1; transform: translate(88, 630) scale(1); }
+    }
+    /* Loader (Typing Indicator) Animations */
+    .typing-loader {
+      transform-box: fill-box;
+      transform-origin: center;
+      opacity: 1;
+      animation: fade-out 0.5s ease-out forwards;
+    }
+
+    @keyframes fade-out {
+        0%   { opacity: 1; }
+        100% { opacity: 0; visibility: hidden; }
+    }
+
+    .typing-dot {
+      animation: typing 1.4s infinite ease-in-out;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.30s; }
+
+    @keyframes typing {
+      0%, 80%, 100% { opacity: 0.5; transform: translateY(0); }
+      40%          { opacity: 1; transform: translateY(-3px); }
+    }
+
+    .link {
+      fill: var(--bubble-text); /* White text in blue bubble */
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    /* 3D Cube Styles (HTML) */
+    .cube-scene {
+      width: 200px;
+      height: 200px;
+      perspective: 600px;
+    }
+
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotateCube 8s infinite linear;
+    }
+
+    @keyframes rotateCube {
+      0%   { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+      100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+    }
+
+    .face {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      left: 60px; /* Centering in 200x200 container: (200-80)/2 = 60 */
+      top: 60px;
+      border: 1px solid rgba(166, 204, 255, 0.6);
+      box-sizing: border-box; /* Ensure border is inside size */
+      box-shadow: 0 0 20px rgba(21, 101, 192, 0.3) inset, 0 0 10px rgba(102, 170, 255, 0.4);
+      backdrop-filter: blur(2px);
+    }
+
+    /* Face colors with gradients and transparency */
+    .face-front  { background: linear-gradient(135deg, rgba(21, 101, 192, 0.85), rgba(13, 74, 138, 0.9)); transform: rotateY(  0deg) translateZ(40px); }
+    .face-back   { background: linear-gradient(135deg, rgba(21, 101, 192, 0.85), rgba(13, 74, 138, 0.9)); transform: rotateY(180deg) translateZ(40px); }
+    .face-right  { background: linear-gradient(135deg, rgba(13, 74, 138, 0.85), rgba(9, 50, 95, 0.9)); transform: rotateY( 90deg) translateZ(40px); }
+    .face-left   { background: linear-gradient(135deg, rgba(13, 74, 138, 0.85), rgba(9, 50, 95, 0.9)); transform: rotateY(-90deg) translateZ(40px); }
+    .face-top    { background: linear-gradient(135deg, rgba(85, 153, 221, 0.85), rgba(33, 119, 199, 0.9)); transform: rotateX( 90deg) translateZ(40px); }
+    .face-bottom { background: linear-gradient(135deg, rgba(85, 153, 221, 0.85), rgba(33, 119, 199, 0.9)); transform: rotateX(-90deg) translateZ(40px); }
+  ]]></style>
+
+  <rect width="800" height="780" fill="var(--bg)" />
+
+  <g class="card">
+    <rect x="60" y="40" width="680" height="680" rx="26"
+          fill="var(--card)" stroke="var(--outline)" stroke-width="2" />
+
+    <text x="100" y="120" font-size="20.5" fill="var(--accent)" class="code">
+      <tspan font-weight="500">interface</tspan>
+      <tspan fill="#333333"> Amon </tspan>
+      <tspan font-weight="500">extends</tspan>
+      <tspan fill="#333333"> any { iAm: </tspan>
+      <tspan font-weight="800" fill="var(--accent)">SoftwareEngineer;</tspan>
+      <tspan fill="#333333"> }</tspan>
+    </text>
+
+    <g class="typing-loader" style="animation-delay: 0.0s; animation-duration: 1.4s;"
+       transform="translate(90,150)">
+      <rect x="0" y="0" width="70" height="32" rx="16" fill="var(--accent)" />
+      <circle cx="10" cy="26" r="4" fill="var(--accent)" />
+      <g transform="translate(18,11)">
+        <use class="typing-dot" href="#dot" x="2" y="5" />
+        <use class="typing-dot" href="#dot" x="16" y="5" />
+        <use class="typing-dot" href="#dot" x="30" y="5" />
+      </g>
+    </g>
+
+    <g transform="translate(90,150)">
+      <g class="bubble-container" style="animation-delay:1.5s;">
+        <rect x="0" y="0" width="165" height="46" rx="18"
+              fill="var(--bubble)" />
+        <polygon transform="translate(0, -2)" points="10,46 26,46 10,58" fill="var(--bubble)" />
+        <text x="22" y="28" font-size="17" fill="var(--bubble-text)">
+          Hi, I'm Amon 👋
+        </text>
+      </g>
+    </g>
+
+    <g transform="translate(90,210)">
+      <g class="bubble-container" style="animation-delay:2.2s;">
+        <rect x="0" y="0" width="350" height="60" rx="18"
+              fill="var(--bubble)" />
+        <polygon transform="translate(0, -2)" points="10,60 26,60 10,72" fill="var(--bubble)" />
+        <text x="22" y="26" font-size="15.5" fill="var(--bubble-text)">
+          <tspan x="22" dy="0">I live in Gujarat and build digital experiences</tspan>
+          <tspan x="22" dy="20">across the web, 3D and mixed reality.</tspan>
+        </text>
+      </g>
+    </g>
+
+    <g transform="translate(90,282)">
+      <g class="bubble-container" style="animation-delay:3.0s;">
+        <rect x="0" y="0" width="450" height="72" rx="18"
+              fill="var(--bubble)" />
+        <polygon transform="translate(0, -2)" points="10,72 26,72 10,84" fill="var(--bubble)" />
+        <text x="22" y="24" font-size="15.5" fill="var(--bubble-text)">
+          <tspan x="22" dy="7">
+            I’m a dynamic, adaptive engineer who loves solving
+          </tspan>
+          <tspan x="22" dy="21">
+            tough problems and leading teams in the right direction.
+          </tspan>
+        </text>
+      </g>
+    </g>
+
+    <g transform="translate(90,436)">
+      <g class="bubble-container" style="animation-delay:3.8s;">
+        <rect x="0" y="-70" width="450" height="70" rx="18"
+              fill="var(--bubble)" />
+        <polygon transform="translate(0, -2)" points="10,0 26,0 10,12" fill="var(--bubble)" />
+        <text x="22" y="-48" font-size="15.5" fill="var(--bubble-text)">
+          <tspan x="22" dy="8">
+            My favourite project right now is Three21, a 3D reverse
+          </tspan>
+          <tspan x="22" dy="22">
+            engineering playground for massive meshes.
+          </tspan>
+        </text>
+      </g>
+    </g>
+
+    <g transform="translate(90,450)">
+      <g class="bubble-container" style="animation-delay:4.6s;">
+        <rect x="0" y="0" width="200" height="96" rx="18"
+              fill="var(--bubble)" />
+        <polygon transform="translate(0, -2)" points="10,96 26,96 10,108" fill="var(--bubble)" />
+        <text x="18" y="30" font-size="15.5" fill="var(--bubble-text)">
+          You can find me on:
+        </text>
+
+        <a xlink:href="https://www.linkedin.com/in/amon-sharma-ab8a15216/"
+           target="_blank">
+          <text x="18" y="56" font-size="15.5" class="link" font-weight="700">
+            LinkedIn
+          </text>
+        </a>
+
+        <a xlink:href="https://github.com/Amon20044" target="_blank">
+          <text x="18" y="78" font-size="15.5" class="link" font-weight="700">
+            GitHub
+          </text>
+        </a>
+      </g>
+    </g>
+
+    <g transform="translate(90,560)">
+      <g class="bubble-container" style="animation-delay:5.4s;">
+        <rect x="0" y="0" width="260" height="50" rx="18"
+              fill="var(--bubble)" />
+        <polygon transform="translate(0,-2)" points="10,50 26,50 10,62" fill="var(--bubble)" />
+        <text x="20" y="30" font-size="16" fill="var(--bubble-text)" font-weight="600">
+          Have a great day 🚀
+        </text>
+      </g>
+    </g>
+    <g transform="translate(520,520)">
+      <g id="cube-container" transform="translate(0, 0)">
+          <!-- Using foreignObject to embed HTML for proper 3D CSS support -->
+        <foreignObject width="200" height="200">
+          <div xmlns="http://www.w3.org/1999/xhtml" class="cube-scene">
+            <div class="cube">
+              <div class="face face-front"></div>
+              <div class="face face-back"></div>
+              <div class="face face-right"></div>
+              <div class="face face-left"></div>
+              <div class="face face-top"></div>
+              <div class="face face-bottom"></div>
+            </div>
+          </div>
+        </foreignObject>
+      </g>
+    </g>
+    <g transform="translate(88, 626)" class="icon" style="animation-delay:6.0s;">
+      <svg width="70" height="70" viewBox="0 0 735 735" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="367.5" cy="367.5" r="367.5" fill="#FFD93B"/>
+<circle cx="367.5" cy="367.5" r="364" stroke="black" stroke-opacity="0.21" stroke-width="7"/>
+<path d="M386.054 226.15C378.238 224.807 370.213 224.061 362.045 224.061C353.877 224.061 345.841 224.807 338.036 226.15C353.017 190.631 361.549 151.452 361.979 110.252H362.122C362.552 151.452 371.084 190.62 386.065 226.15H386.054Z" fill="#1F7AE0"/>
+<path d="M314.139 333.255C329.77 330.569 345.82 329.077 362.168 329.077C378.515 329.077 394.565 330.569 410.196 333.255C445.758 417.892 499.596 492.303 566.508 551.107C576.925 540.136 586.802 528.66 595.423 516.105C514.996 454.168 450.619 370.885 410.053 274.313C394.422 271.628 378.372 270.136 362.024 270.136C345.677 270.136 329.627 271.628 313.995 274.313C273.429 370.874 209.053 454.157 128.626 516.105C137.29 528.706 147.211 540.228 157.673 551.245C224.651 492.418 278.555 417.961 314.139 333.266V333.255Z" fill="#1F7AE0"/>
+</svg>
+
+    </g>
+  </g>
+</svg>
