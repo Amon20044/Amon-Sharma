@@ -2,7 +2,7 @@
 <svg
   width="100%"
   height="100%"
-  viewBox="0 0 800 780"
+  viewBox="0 0 800 800"
   preserveAspectRatio="xMidYMid meet"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -123,12 +123,94 @@
     .face-left   { background: linear-gradient(135deg, rgba(13, 74, 138, 0.85), rgba(9, 50, 95, 0.9)); transform: rotateY(-90deg) translateZ(40px); }
     .face-top    { background: linear-gradient(135deg, rgba(85, 153, 221, 0.85), rgba(33, 119, 199, 0.9)); transform: rotateX( 90deg) translateZ(40px); }
     .face-bottom { background: linear-gradient(135deg, rgba(85, 153, 221, 0.85), rgba(33, 119, 199, 0.9)); transform: rotateX(-90deg) translateZ(40px); }
+    /* HTML Chat Layout Styles */
+    .chat-container {
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+      font-family: Geneva, Verdana, sans-serif;
+      padding-top: 10px;
+    }
+
+    .html-bubble {
+      /* Metallic Gradient Base */
+      background: linear-gradient(135deg, #358fe6, #1f7ae0, #1560b0);
+      background-size: 200% 200%;
+      
+      /* Metal Edge & Depth */
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2);
+      
+      color: var(--bubble-text);
+      padding: 12px 20px;
+      border-radius: 18px;
+      border-bottom-left-radius: 4px;
+      font-size: 15.5px;
+      line-height: 1.4;
+      max-width: 100%;
+      width: fit-content;
+      
+      /* Animation: Pop-in + Subtle Metal Pulse */
+      opacity: 0;
+      transform-origin: left bottom;
+      animation: pop-in-out 0.8s ease-out forwards, metal-pulse 6s ease-in-out infinite;
+      
+      position: relative;
+      overflow: hidden; /* Clips the shine */
+    }
+
+    /* The "Slick" Shine Effect */
+    .html-bubble::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+      );
+      transform: skewX(-20deg);
+      animation: shine-pass 3.5s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes metal-pulse {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes shine-pass {
+      0% { left: -150%; }
+      20% { left: 150%; } /* Fast shine pass */
+      100% { left: 150%; } /* Wait */
+    }
+
+    .links-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .html-link {
+      color: white;
+      font-weight: 700;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   ]]></style>
 
-  <rect width="800" height="780" fill="var(--bg)" />
+  <rect width="800" height="800" fill="var(--bg)" />
 
   <g class="card">
-    <rect x="60" y="40" width="680" height="680" rx="26"
+    <rect x="60" y="40" width="680" height="720" rx="26"
           fill="var(--card)" stroke="var(--outline)" stroke-width="2" />
 
     <text x="100" y="120" font-size="20.5" fill="var(--accent)" class="code">
@@ -141,7 +223,7 @@
     </text>
 
     <g class="typing-loader" style="animation-delay: 0.0s; animation-duration: 1.4s;"
-       transform="translate(90,150)">
+       transform="translate(100,150)">
       <rect x="0" y="0" width="70" height="32" rx="16" fill="var(--accent)" />
       <circle cx="10" cy="26" r="4" fill="var(--accent)" />
       <g transform="translate(18,11)">
@@ -151,95 +233,39 @@
       </g>
     </g>
 
-    <g transform="translate(90,150)">
-      <g class="bubble-container" style="animation-delay:1.5s;">
-        <rect x="0" y="0" width="165" height="46" rx="18"
-              fill="var(--bubble)" />
-        <polygon transform="translate(0, -2)" points="10,46 26,46 10,58" fill="var(--bubble)" />
-        <text x="22" y="28" font-size="17" fill="var(--bubble-text)">
+    <!-- Responsive HTML Chat Layout -->
+    <foreignObject x="90" y="120" width="480" height="550">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="chat-container">
+        <div class="html-bubble" style="animation-delay: 1.5s;">
           Hi, I'm Amon 👋
-        </text>
-      </g>
-    </g>
+        </div>
 
-    <g transform="translate(90,210)">
-      <g class="bubble-container" style="animation-delay:2.2s;">
-        <rect x="0" y="0" width="350" height="60" rx="18"
-              fill="var(--bubble)" />
-        <polygon transform="translate(0, -2)" points="10,60 26,60 10,72" fill="var(--bubble)" />
-        <text x="22" y="26" font-size="15.5" fill="var(--bubble-text)">
-          <tspan x="22" dy="0">I live in Gujarat and build digital experiences</tspan>
-          <tspan x="22" dy="20">across the web, 3D and mixed reality.</tspan>
-        </text>
-      </g>
-    </g>
+        <div class="html-bubble" style="animation-delay: 2.2s;">
+          I live in Gujarat and build digital experiences across the web, 3D and mixed reality.
+        </div>
 
-    <g transform="translate(90,282)">
-      <g class="bubble-container" style="animation-delay:3.0s;">
-        <rect x="0" y="0" width="450" height="72" rx="18"
-              fill="var(--bubble)" />
-        <polygon transform="translate(0, -2)" points="10,72 26,72 10,84" fill="var(--bubble)" />
-        <text x="22" y="24" font-size="15.5" fill="var(--bubble-text)">
-          <tspan x="22" dy="7">
-            I’m a dynamic, adaptive engineer who loves solving
-          </tspan>
-          <tspan x="22" dy="21">
-            tough problems and leading teams in the right direction.
-          </tspan>
-        </text>
-      </g>
-    </g>
+        <div class="html-bubble" style="animation-delay: 3.0s;">
+          I’m a dynamic, adaptive engineer who loves solving tough problems and leading teams in the right direction.
+        </div>
 
-    <g transform="translate(90,436)">
-      <g class="bubble-container" style="animation-delay:3.8s;">
-        <rect x="0" y="-70" width="450" height="70" rx="18"
-              fill="var(--bubble)" />
-        <polygon transform="translate(0, -2)" points="10,0 26,0 10,12" fill="var(--bubble)" />
-        <text x="22" y="-48" font-size="15.5" fill="var(--bubble-text)">
-          <tspan x="22" dy="8">
-            My favourite project right now is Three21, a 3D reverse
-          </tspan>
-          <tspan x="22" dy="22">
-            engineering playground for massive meshes.
-          </tspan>
-        </text>
-      </g>
-    </g>
+        <div class="html-bubble" style="animation-delay: 3.8s;">
+          My favourite project right now is Three21, a 3D reverse engineering playground for massive meshes.
+        </div>
 
-    <g transform="translate(90,450)">
-      <g class="bubble-container" style="animation-delay:4.6s;">
-        <rect x="0" y="0" width="200" height="96" rx="18"
-              fill="var(--bubble)" />
-        <polygon transform="translate(0, -2)" points="10,96 26,96 10,108" fill="var(--bubble)" />
-        <text x="18" y="30" font-size="15.5" fill="var(--bubble-text)">
+        <div class="html-bubble" style="animation-delay: 4.6s;">
           You can find me on:
-        </text>
+          <div class="links-row">
+            <a href="https://www.linkedin.com/in/amon-sharma-ab8a15216/" target="_blank" class="html-link">LinkedIn</a>
+            <a href="https://github.com/Amon20044" target="_blank" class="html-link">GitHub</a>
+          </div>
+        </div>
 
-        <a xlink:href="https://www.linkedin.com/in/amon-sharma-ab8a15216/"
-           target="_blank">
-          <text x="18" y="56" font-size="15.5" class="link" font-weight="700">
-            LinkedIn
-          </text>
-        </a>
-
-        <a xlink:href="https://github.com/Amon20044" target="_blank">
-          <text x="18" y="78" font-size="15.5" class="link" font-weight="700">
-            GitHub
-          </text>
-        </a>
-      </g>
-    </g>
-
-    <g transform="translate(90,560)">
-      <g class="bubble-container" style="animation-delay:5.4s;">
-        <rect x="0" y="0" width="260" height="50" rx="18"
-              fill="var(--bubble)" />
-        <polygon transform="translate(0,-2)" points="10,50 26,50 10,62" fill="var(--bubble)" />
-        <text x="20" y="30" font-size="16" fill="var(--bubble-text)" font-weight="600">
+        <div class="html-bubble" style="animation-delay: 5.4s;">
           Have a great day 🚀
-        </text>
-      </g>
-    </g>
+        </div>
+
+      </div>
+    </foreignObject>
     <g transform="translate(520,520)">
       <g id="cube-container" transform="translate(0, 0)">
           <!-- Using foreignObject to embed HTML for proper 3D CSS support -->
@@ -257,10 +283,10 @@
         </foreignObject>
       </g>
     </g>
-    <g transform="translate(88, 626)" class="icon" style="animation-delay:6.0s;">
+    <g transform="translate(98, 646)" class="icon" style="animation-delay:6.0s;">
       <svg width="70" height="70" viewBox="0 0 735 735" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="367.5" cy="367.5" r="367.5" fill="#FFD93B"/>
-<circle cx="367.5" cy="367.5" r="364" stroke="black" stroke-opacity="0.21" stroke-width="7"/>
+<circle cx="367.5" cy="367.5" r="367.5" fill="#ffe97a"/>
+<!-- <circle cx="367.5" cy="367.5" r="367.5" stroke="#1F7AE0" stroke-opacity="0.2" stroke-width="1"/> -->
 <path d="M386.054 226.15C378.238 224.807 370.213 224.061 362.045 224.061C353.877 224.061 345.841 224.807 338.036 226.15C353.017 190.631 361.549 151.452 361.979 110.252H362.122C362.552 151.452 371.084 190.62 386.065 226.15H386.054Z" fill="#1F7AE0"/>
 <path d="M314.139 333.255C329.77 330.569 345.82 329.077 362.168 329.077C378.515 329.077 394.565 330.569 410.196 333.255C445.758 417.892 499.596 492.303 566.508 551.107C576.925 540.136 586.802 528.66 595.423 516.105C514.996 454.168 450.619 370.885 410.053 274.313C394.422 271.628 378.372 270.136 362.024 270.136C345.677 270.136 329.627 271.628 313.995 274.313C273.429 370.874 209.053 454.157 128.626 516.105C137.29 528.706 147.211 540.228 157.673 551.245C224.651 492.418 278.555 417.961 314.139 333.266V333.255Z" fill="#1F7AE0"/>
 </svg>
