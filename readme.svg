@@ -207,10 +207,17 @@
     }
   ]]></style>
 
-  <rect width="800" height="800" fill="var(--bg)" />
-
+  <!-- Smooth gradient from yellow to transparent using fill -->
+  <rect x="0" y="0" width="800" height="800" fill="#ffd93b" opacity="0.08" rx="26"/>
+  <rect x="8" y="8" width="784" height="784" fill="#ffd93b" opacity="0.10" rx="26"/>
+  <rect x="16" y="16" width="768" height="768" fill="#ffd93b" opacity="0.13" rx="26"/>
+  <rect x="24" y="24" width="752" height="752" fill="#ffd93b" opacity="0.17" rx="26"/>
+  <rect x="32" y="32" width="736" height="736" fill="#ffd93b" opacity="0.22" rx="26"/>
+  <rect x="48" y="48" width="704" height="704" fill="#ffd93b" opacity="0.42" rx="26"/>
+  <rect x="54" y="51" width="694" height="698" fill="#ffd93b" opacity="0.60" rx="26"/>
+  
   <g class="card">
-    <rect x="60" y="40" width="680" height="720" rx="26"
+    <rect x="60" y="60" width="680" height="680" rx="26"
           fill="var(--card)" stroke="var(--outline)" stroke-width="2" />
 
     <text x="100" y="120" font-size="20.5" fill="var(--accent)" class="code">
@@ -241,27 +248,19 @@
         </div>
 
         <div class="html-bubble" style="animation-delay: 2.2s;">
-          I live in Gujarat and build digital experiences across the web, 3D and mixed reality.
+          Based in India, I specialize in building and scaling robust applications across web, 3D, and cloud platforms.
         </div>
 
         <div class="html-bubble" style="animation-delay: 3.0s;">
-          I’m a dynamic, adaptive engineer who loves solving tough problems and leading teams in the right direction.
+          I love AWS, DSA, and core CS concepts. I solve problems at the application layer first, then dive deep as a specialist.
         </div>
 
         <div class="html-bubble" style="animation-delay: 3.8s;">
-          My favourite project right now is Three21, a 3D reverse engineering playground for massive meshes.
+          I deliver scalable, production-ready solutions – whether it's architecting cloud infrastructure or optimizing complex systems.
         </div>
 
         <div class="html-bubble" style="animation-delay: 4.6s;">
-          You can find me on:
-          <div class="links-row">
-            <a href="https://www.linkedin.com/in/amon-sharma-ab8a15216/" target="_blank" class="html-link">LinkedIn</a>
-            <a href="https://github.com/Amon20044" target="_blank" class="html-link">GitHub</a>
-          </div>
-        </div>
-
-        <div class="html-bubble" style="animation-delay: 5.4s;">
-          Have a great day 🚀
+          Let's build something amazing together 🚀
         </div>
 
       </div>
@@ -283,8 +282,8 @@
         </foreignObject>
       </g>
     </g>
-    <g transform="translate(98, 646)" class="icon" style="animation-delay:6.0s;">
-      <svg width="70" height="70" viewBox="0 0 735 735" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(90, 610)" class="icon" style="animation-delay:5.2s;">
+      <svg width="96" height="96" viewBox="0 0 735 735" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="367.5" cy="367.5" r="367.5" fill="#ffe97a"/>
 <!-- <circle cx="367.5" cy="367.5" r="367.5" stroke="#1F7AE0" stroke-opacity="0.2" stroke-width="1"/> -->
 <path d="M386.054 226.15C378.238 224.807 370.213 224.061 362.045 224.061C353.877 224.061 345.841 224.807 338.036 226.15C353.017 190.631 361.549 151.452 361.979 110.252H362.122C362.552 151.452 371.084 190.62 386.065 226.15H386.054Z" fill="#1F7AE0"/>
