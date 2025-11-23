@@ -66,7 +66,6 @@
         0%   { opacity: 1; }
         100% { opacity: 0; visibility: hidden; }
     }
-
     .typing-dot {
       animation: typing 1.4s infinite ease-in-out;
     }
@@ -138,6 +137,12 @@
       /* Metallic Gradient Base */
       background: linear-gradient(135deg, #358fe6, #1f7ae0, #1560b0);
       background-size: 200% 200%;
+      
+      /* Metal Edge & Depth */
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2);
+      
       color: var(--bubble-text);
       padding: 12px 20px;
       border-radius: 18px;
@@ -201,17 +206,10 @@
     }
   ]]></style>
 
-  <!-- Smooth gradient from yellow to transparent using fill -->
-  <rect x="0" y="0" width="800" height="800" fill="#ffd93b" opacity="0.08" rx="26"/>
-  <rect x="8" y="8" width="784" height="784" fill="#ffd93b" opacity="0.10" rx="26"/>
-  <rect x="16" y="16" width="768" height="768" fill="#ffd93b" opacity="0.13" rx="26"/>
-  <rect x="24" y="24" width="752" height="752" fill="#ffd93b" opacity="0.17" rx="26"/>
-  <rect x="32" y="32" width="736" height="736" fill="#ffd93b" opacity="0.22" rx="26"/>
-  <rect x="48" y="48" width="704" height="704" fill="#ffd93b" opacity="0.42" rx="26"/>
-  <rect x="54" y="51" width="694" height="698" fill="#ffd93b" opacity="0.60" rx="26"/>
-  
+  <rect width="800" height="800" fill="var(--bg)" rx="32"  />
+
   <g class="card">
-    <rect x="60" y="60" width="680" height="680" rx="26"
+    <rect x="60" y="40" width="680" height="720" rx="26"
           fill="var(--card)" stroke="var(--outline)" stroke-width="2" />
 
     <text x="100" y="120" font-size="20.5" fill="var(--accent)" class="code">
@@ -237,7 +235,7 @@
     <!-- Responsive HTML Chat Layout -->
     <foreignObject x="90" y="120" width="480" height="550">
       <div xmlns="http://www.w3.org/1999/xhtml" class="chat-container">
-        <div class="html-bubble" style="animation-delay: 1.5s;">
+            <div class="html-bubble" style="animation-delay: 1.5s;">
           Hi, I'm Amon 👋
         </div>
 
@@ -256,7 +254,6 @@
         <div class="html-bubble" style="animation-delay: 4.6s;">
           Let's build something amazing together 🚀
         </div>
-
       </div>
     </foreignObject>
     <g transform="translate(520,520)">
