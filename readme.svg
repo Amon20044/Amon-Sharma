@@ -138,12 +138,6 @@
       /* Metallic Gradient Base */
       background: linear-gradient(135deg, #358fe6, #1f7ae0, #1560b0);
       background-size: 200% 200%;
-      
-      /* Metal Edge & Depth */
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-top: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2);
-      
       color: var(--bubble-text);
       padding: 12px 20px;
       border-radius: 18px;
