@@ -11,7 +11,7 @@ import amon from '@/assets/amon.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function AboutMe  ()  {
+export default function AboutMe() {
   useEffect(() => {
     const startDesktop = 'top 105% center';
     const startMobile = 'top 130% center';
@@ -59,10 +59,10 @@ export default function AboutMe  ()  {
       designAnimation.kill();
     };
   }, []);
-/* text-[var(--personaColor)] */
-/* text-[var(--purpleColor)] */
-/* bg-[var(--personaColor)] */
-/* bg-[var(--purpleColor)] */
+  /* text-[var(--personaColor)] */
+  /* text-[var(--purpleColor)] */
+  /* bg-[var(--personaColor)] */
+  /* bg-[var(--purpleColor)] */
   return (
     <div className=' relative w-screen h-auto max-[850px]:h-auto overflow-hidden -translate-y-5 m-0 bg-black py-8 flex flex-row max-[850px]:flex-col overflow-hidden '>
       <div className='w-[15vw] h-[140vh] top-5 flex items-center content-center max-[850px]:w-screen max-[850px]:h-[15vh]'>
@@ -84,44 +84,42 @@ export default function AboutMe  ()  {
           </div>
           <div className='h-[40%] w-full flex items-center justify-center flex-col my-5'>
             <p className='text-[4rem] leading-none max-[850px]:text-[3rem] font-extralight'>
-              <span className='first font-semibold'>You</span> can call me Creative <i className='font-bold'>Sharma’ji or D-Zyner</i>.
+              <span className='first font-semibold'>Building </span> scalable systems, <i className='font-bold'> Going Deep for efficiency...</i>
             </p>
           </div>
           <div className='h-[60%] w-[100%] flex flex-col items-center justify-around my-5'>
-          <div className='w-full h-[2px] bgcolor my-5'></div>
+            <div className='w-full h-[2px] bgcolor my-5'></div>
             <p className='text-[1.35rem] leading-snug  font-light max-[850px]:text-[1.1rem] my-5 font-extralight'>
-            <span className='first'>I</span> am <span className='bg-[var(--personaColor)] text-[var(--purpleColor)] font-bold'>Amon Sharma</span> from Gujarat,India. Currently pursuing B.Tech in Computer Science and Engineering at <span className='bg-[var(--purpleColor)] text-[var(--personaColor)] font-bold'>IIIT Vadodara.</span>
+              <span className='first'>I</span> am <span className='bg-[var(--personaColor)] text-[var(--purpleColor)] font-bold'>Amon Sharma</span>, a Full-Stack Engineer from Gujarat, India. Currently pursuing B.Tech in Computer Science and Engineering at <span className='bg-[var(--purpleColor)] text-[var(--personaColor)] font-bold'> IIIT Vadodara.</span>
             </p>
             <div className='w-full h-[.1px] bgcolor my-5'></div>
             <div className='text-[1.35rem] leading-snug font-light max-[850px]:text-[1.1rem] my-5 font-extralight'>
-            
- <span className='font-bold'><span className='first'>Y</span>ou can call me </span>  
-<span className='first font-bold'> Dzyno (or D-Zyner/Dezigner )</span>, not Dino. I am a 
-<span className='font-bold'><i>Tech and Coding Enthusiast</i></span>, 
-<span className='font-bold'><i>Sleek Designer</i></span>, 
-<span className='font-bold'><i>Visual Artist</i></span>, 
-<span className='font-bold'><i>Marketing Expert</i></span>, and 
-<span className='font-bold'><i>Creative Mind</i></span>. 
-I love to craft compelling stories for your products, whether visually or by Coding stuffs, through video creation, or as a content creator for your next successful project. With expertise in 
-<span className='font-bold'><i>Frontend Development</i></span>, 
-<span className='font-bold'><i>UI/UX Design</i></span>, 
-<span className='font-bold'><i>Graphic Design</i></span>, 
-<span className='font-bold'><i>Marketing</i></span>, and 
-<span className='font-bold'><i>Content Creation</i></span>, I can help bring your vision to life. 
-<span className='bg-[var(--personaColor)] text-[var(--purpleColor)] font-bold'> Let's collaborate </span> and make your brand stand out in the 
-<span className='font-black'>market!</span>
- </div>
+
+              <span className='font-bold'><span className='first'> A</span>s a Passionate Generic Engineer</span>, I specialize in overthikning, overanalyzing, architecting
+              <span className='font-bold'><i> scalable, event-driven systems </i></span> and robust
+              <span className='font-bold'><i> cloud infrastructures</i></span>. I have extensive experience in building
+              <span className='font-bold'><i> modern web applications</i></span>, integrating
+              <span className='font-bold'><i> AI/ML capabilities</i></span>, and developing
+              <span className='font-bold'><i> real-time solutions</i></span>.
+
+              My expertise extends to creating <span className='font-bold'><i> immersive 3D web experiences</i></span> and high-performance
+              <span className='font-bold'><i> mobile applications</i></span>. I am passionate about leveraging cutting-edge technologies to build efficient and impactful software solutions.
+
+              Beyond coding, I am an active <span className='bg-[var(--personaColor)] text-[var(--purpleColor)] font-bold'>leader in the tech community</span> and a competitive programmer, always eager to tackle new challenges.
+
+              <span className='bg-[var(--personaColor)] text-[var(--purpleColor)] font-bold'>Let's build something amazing</span> together!
+            </div>
             <div className='w-full h-[2px] bgcolor my-5'></div>
             <div className='design h-[65vw] w-[44vw] absolute translate-y-[0vh] -z-10 max-[850px]:translate-y-[50vh] max-[850px]:h-[55vh] max-[850px]:w-[100vw] right-0 top-0'>
-          <Image
-            src={about}
-            alt="Amon Sharma"
-            fill={true}
-            objectFit="contain"
-            objectPosition="right"
-            className='w-[50vw]'
-          />
-        </div>
+              <Image
+                src={about}
+                alt="Amon Sharma"
+                fill={true}
+                objectFit="contain"
+                objectPosition="right"
+                className='w-[50vw]'
+              />
+            </div>
           </div>
 
         </div>

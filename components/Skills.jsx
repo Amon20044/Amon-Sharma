@@ -3,81 +3,117 @@ import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import CustomEase from 'gsap/CustomEase';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import './Skills.css'; // Import the CSS file for styling
+import './Skills.css';
 import Skillss from '@/assets/Skills.svg'
 import Image from 'next/image';
 gsap.registerPlugin(CustomEase);
-// Register the GSAP ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// Skill icons mapping
-const skillIcons = {
-  // 3D Tools
-  unreal: 'unreal',
-  unity: 'unity',
-  blender: 'blender',
+const skillsData = [
+  // {
+  //   category: "Gen-AI/ML",
+  //   skills: [
+  //     { name: 'langchain', icon: 'langchain' },
+  //     { name: 'gemini', icon: 'gemini' },
+  //   ]
+  // },
+  {
+    category: "Programming Languages",
+    skills: [
+      { name: 'javascript', icon: 'js' },
+      { name: 'typescript', icon: 'ts' },
+      { name: 'python', icon: 'py' },
+      { name: 'cpp', icon: 'cpp' },
+      { name: 'c', icon: 'c' },
+      { name: 'go', icon: 'go' },
+      { name: 'java', icon: 'java' }
+    ]
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: 'fastapi', icon: 'fastapi' },
+      { name: 'express', icon: 'express' },
+      { name: 'nodejs', icon: 'nodejs' },
+      { name: 'go', icon: 'go' },
+      {
+        name: 'nextjs', icon: 'nextjs'
+      }
+    ]
+  },
+  {
+    category: "Frontend",
+    skills: [
+      { name: 'react', icon: 'react' },
+      { name: 'nextjs', icon: 'nextjs' },
+      { name: 'redux', icon: 'redux' },
+      // { name: 'gsap', icon: 'gsap' },
+      { name: 'threejs', icon: 'threejs' },
+      { name: 'tailwind', icon: 'tailwind' },
+      { name: 'html', icon: 'html' },
+      { name: 'css', icon: 'css' },
+      { name: 'sass', icon: 'sass' },
+    ]
+  },
+  {
+    category: "Databases",
+    skills: [
+      { name: 'postgresql', icon: 'postgres' },
+      { name: 'supabase', icon: 'supabase' },
+      { name: 'mongodb', icon: 'mongodb' },
+      { name: 'mysql', icon: 'mysql' },
 
-  // Graphic Design Tools
-  illustrator: 'illustrator',
-  photoshop: 'photoshop',
-  figma: 'figma',
+      { name: 'sqlite', icon: 'sqlite' },
 
-  // Programming Languages
-  java: 'java',
-  python: 'py',
-  javascript: 'js',
-  cpp: 'cpp',
-  c: 'c',
-  html: 'html',
-  css: 'css',
-
-  // Frameworks
-  react: 'react',
-  vue: 'vue',
-  next: 'nextjs',
-  angular: 'angular',
-  django: 'django',
-
-  // Development Tools
-  git: 'git',
-  docker: 'docker',
-
-  // Cloud Platforms
-  aws: 'aws',
-  vercel: 'vercel',
-  azure: 'azure',
-
-  // Databases
-  mysql: 'mysql',
-  postgresql: 'postgres',
-  mongodb: 'mongodb',
-
-};
+    ]
+  },
+  {
+    category: "Cloud & DevOps",
+    skills: [
+      { name: 'docker', icon: 'docker' },
+      { name: 'nginx', icon: 'nginx' },
+      { name: 'gcp', icon: 'gcp' },
+      { name: 'vercel', icon: 'vercel' },
+      { name: 'githubactions', icon: 'githubactions' },
+      { name: 'kubernetes', icon: 'kubernetes' },
+    ]
+  },
+  {
+    category: "Design Tools",
+    skills: [
+      { name: 'figma', icon: 'figma' },
+      { name: 'photoshop', icon: 'photoshop' },
+      { name: 'illustrator', icon: 'illustrator' },
+      {
+        name: 'blender',
+        icon: 'blender'
+      }
+    ]
+  }
+];
 
 export default function Skills() {
   useEffect(() => {
-     let divElement = document.querySelector(".skills-container");
- 
-        let elemHeight = divElement.offsetHeight;
-    // Parallax effect for SkillImage
+    let divElement = document.querySelector(".skills-container");
+
+    let elemHeight = divElement.offsetHeight;
     const SkillAnimation = gsap.timeline({
-        scrollTrigger: {
-          trigger: '.skills-container',
-          start: 'top 0%',
-          end: 'bottom 0%',
-          scrub: true,
-        },
-      });
-  
-      SkillAnimation
-        .fromTo(
-          '.SkillImage',
-          { opacity: 1, y: -300, duration:6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")},
-          { opacity: 0, y: elemHeight-500, duration:6, ease:CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1")}
-        
-        )
-        
-    // Animation for skill sections
+      scrollTrigger: {
+        trigger: '.skills-container',
+        start: 'top 0%',
+        end: 'bottom 0%',
+        scrub: true,
+      },
+    });
+
+    SkillAnimation
+      .fromTo(
+        '.SkillImage',
+        { opacity: 1, y: -300, duration: 6, ease: CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1") },
+        { opacity: 0, y: elemHeight - 500, duration: 6, ease: CustomEase.create("custom", "M0,0,C0.126,0.382,0.282,0.674,0.44,0.822,0.632,1.002,0.818,1.001,1,1") }
+
+      )
+
     gsap.fromTo('.skill-section',
       { opacity: 0, y: 100 },
       {
@@ -104,109 +140,28 @@ export default function Skills() {
           style={{ width: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'right top' }}
         />
       </div>
-      <div className="skill-sections mt-[10vw]">
-        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
-        <div className="skill-section">
-          <h2>Graphic Design Tools</h2>
-          <div className="skills-grid">
-            {['illustrator', 'photoshop', 'figma'].map((tool) => (
-              <a key={tool} href={`https://skillicons.dev`} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={`https://skillicons.dev/icons?i=${skillIcons[tool]}`}
-                  alt={tool}
-                />
-              </a>
-            ))}
+      <div className="skill-sections my-[10vw]">
+        {skillsData.map((section, index) => (
+          <div key={index}>
+            <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
+            <div className="skill-section">
+              <h2>{section.category}</h2>
+              <div className="skills-grid">
+                {section.skills.map((skill) => (
+                  <a key={skill.name} href={`https://skillicons.dev`} target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={`https://skillicons.dev/icons?i=${skill.icon}`}
+                      alt={skill.name}
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
+
           </div>
-        </div>
-        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
-        <div className="skill-section">
-          <h2>3D Tools & Game Development</h2>
-          <div className="skills-grid">
-            {['unreal', 'unity', 'blender'].map((tool) => (
-              <a key={tool} href={`https://skillicons.dev`} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={`https://skillicons.dev/icons?i=${skillIcons[tool]}`}
-                  alt={tool}
-                />
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
-        <div className="skill-section">
-          <h2>Programming Languages</h2>
-          <div className="skills-grid">
-            {['java', 'python', 'javascript', 'cpp', 'c', 'html', 'css'].map((skill) => (
-              <a key={skill} href={`https://skillicons.dev`} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={`https://skillicons.dev/icons?i=${skillIcons[skill]}`}
-                  alt={skill}
-                />
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
-        <div className="skill-section">
-          <h2>Frameworks</h2>
-          <div className="skills-grid">
-            {['react', 'vue', 'next', 'angular', 'django'].map((skill) => (
-              <a key={skill} href={`https://skillicons.dev`} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={`https://skillicons.dev/icons?i=${skillIcons[skill]}`}
-                  alt={skill}
-                />
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
-        <div className="skill-section">
-          <h2>Development Tools</h2>
-          <div className="skills-grid">
-            {['git', 'docker'].map((tool) => (
-              <a key={tool} href={`https://skillicons.dev`} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={`https://skillicons.dev/icons?i=${skillIcons[tool]}`}
-                  alt={tool}
-                />
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
-        <div className="skill-section">
-          <h2>Cloud Platforms</h2>
-          <div className="skills-grid">
-            {['aws', 'vercel', 'azure'].map((platform) => (
-              <a key={platform} href={`https://skillicons.dev`} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={`https://skillicons.dev/icons?i=${skillIcons[platform]}`}
-                  alt={platform}
-                />
-              </a>
-            ))}
-          </div>
-        </div>
-        
-        <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
-        <div className="skill-section">
-          <h2>Databases</h2>
-          <div className="skills-grid">
-            {['mysql', 'postgresql', 'mongodb'].map((db) => (
-              <a key={db} href={`https://skillicons.dev`} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={`https://skillicons.dev/icons?i=${skillIcons[db]}`}
-                  alt={db}
-                />
-              </a>
-            ))}
-          </div>
-        </div>
+        ))}
         <div className='w-[80vw] h-[1px] bg-black opacity-50 mb-8'></div>
       </div>
     </div>
   );
 };
-

@@ -4,15 +4,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
   font-family: 'brogi';
   src: url('/fonts/BrogiFREE.woff2') format('woff2'),
-       url('/fonts/BrogiFREE.woff') format('woff'),
-       url('/fonts/BrogiFREE.ttf') format('truetype');
+    url('/fonts/BrogiFREE.woff') format('woff'),
+    url('/fonts/BrogiFREE.ttf') format('truetype');
 }
 
-html.lenis, html.lenis body {
-  
+html.lenis,
+html.lenis body {
+
   height: auto;
 }
 
@@ -38,15 +40,16 @@ html.lenis, html.lenis body {
   src: local('Brogi'), url('https://fonts.cdnfonts.com/s/91270/BrogiFREE.woff') format('woff');
 }
 
-:root{
-  --primaryColor:#fffce8;
-  --opacity:#fffce13f;
-  --borderColor:black;
-  --personaColor:#D9FF50;
-  --purpleColor:#7B5DE6;
-  --h1Size : 4em;
-  --borderW8:1px;
+:root {
+  --primaryColor: #fffce8;
+  --opacity: #fffce13f;
+  --borderColor: black;
+  --personaColor: #D9FF50;
+  --purpleColor: #7B5DE6;
+  --h1Size: 4em;
+  --borderW8: 1px;
 }
+
 /* text-[var(--personaColor)] */
 /* text-[var(--purpleColor)] */
 /* bg-[var(--personaColor)] */
@@ -58,19 +61,18 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
   background-color: var(--primaryColor);
 }
 
 .body {
-  width: auto; 
+  width: auto;
   height: auto;
 
   display: block;
   background-color: var(--primaryColor);
 }
 
-.body .projectss::after{
+.body .projectss::after {
   content: '';
   z-index: 20;
   transform: translate(-50%, -50%);
@@ -92,7 +94,7 @@ body {
 .right {
   z-index: 0;
   right: 0;
-  position:absolute;
+  position: absolute;
   width: 60vw;
   height: calc(100vh - 10vh - 53px);
   border-left: var(--borderW8) var(--borderColor) solid;
@@ -105,9 +107,11 @@ body {
   height: 100vh;
   z-index: -1;
 }
-.head{
+
+.head {
   font-size: 2rem;
 }
+
 .upperBlock {
   width: 100%;
   height: 60%;
@@ -117,8 +121,9 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  position: relative; /* Add this to position the animated circle */
-  
+  position: relative;
+  /* Add this to position the animated circle */
+
 }
 
 .upperBlock p {
@@ -126,13 +131,13 @@ body {
   margin-left: 5vw;
   color: white;
   width: 85%;
-  mix-blend-mode:difference;
+  mix-blend-mode: difference;
   line-height: 1em;
 }
 
 .upperBlock div {
   opacity: 0;
-  
+
   position: relative;
   height: 100px;
   width: 100px;
@@ -142,14 +147,16 @@ body {
   transform: scale(1);
   transition: opacity 0.4s ease-in-out, transform 0.8s ease-in-out;
 }
+
 .upperBlock:hover div {
   opacity: 1;
-  transform: scale(20)  translateX(2vw);
+  transform: scale(20) translateX(2vw);
   /* Scale up on hover */
   transition: opacity 0.2s ease-in-out, transform 0.6s ease-in-out;
 }
+
 .downBlock {
-  position:fixed;
+  position: fixed;
   height: 40%;
   border-bottom: var(--borderW8) black solid;
   width: 100%;
@@ -159,7 +166,7 @@ body {
   justify-content: flex-start;
 }
 
-.upperBlock::before{
+.upperBlock::before {
   content: '';
   translate: -3.5vw;
   width: 20vw;
@@ -168,7 +175,8 @@ body {
   mix-blend-mode: difference;
   z-index: 1;
 }
-.upperBlock::after{
+
+.upperBlock::after {
   content: '';
   translate: -46vw;
   height: 65%;
@@ -177,29 +185,33 @@ body {
   mix-blend-mode: difference;
   z-index: 1;
 }
-.downBlock{
+
+.downBlock {
   position: absolute;
   height: 40%;
-  border-bottom: var(--borderW8) black solid ;
+  border-bottom: var(--borderW8) black solid;
   width: 100%;
-  background-color:var(--primaryColor);
+  background-color: var(--primaryColor);
   display: flex;
-  justify-content:center;
+  justify-content: center;
   overflow: hidden;
 }
-.downBlock .name{
+
+.downBlock .name {
   translate: 0 -10vh;
   margin: 0;
   margin-bottom: 2%;
   mix-blend-mode: difference;
   color: var(--primaryColor);
-  
+
   font-size: calc(var(--h1Size)*1.5);
 }
-.downBlock .name span{
+
+.downBlock .name span {
   font-family: "brogi", "Montserrat";
 }
-.downBlock .designation{
+
+.downBlock .designation {
   margin: 0;
   position: absolute;
   translate: 0 -7.5vh;
@@ -207,9 +219,11 @@ body {
   width: 100%;
   z-index: 0;
 }
-.first{
+
+.first {
   font-family: "brogi", "Montserrat";
 }
+
 .AboutPage {
   position: relative;
   top: 80.8vh;
@@ -223,27 +237,28 @@ body {
   justify-content: center;
 }
 
-@media (max-width: 500px){
-  :root{
-    --h1Size :2em;
+@media (max-width: 500px) {
+  :root {
+    --h1Size: 2em;
   }
 }
 
-@media (max-width:850px){
-  body{
+@media (max-width:850px) {
+  body {
     cursor: auto;
   }
-  
 
-  .downBlock .name{
+
+  .downBlock .name {
     translate: 0 -13vh;
     margin: 0;
     margin-bottom: 0;
   }
 
-  :root{
-    --h1Size :  3.2em;
+  :root {
+    --h1Size: 3.2em;
   }
+
   .upperBlock {
     width: 100%;
     height: 60%;
@@ -253,37 +268,43 @@ body {
     align-items: center;
     justify-content: center;
   }
-  .upperBlock p{
+
+  .upperBlock p {
     width: 100%;
     z-index: 1;
   }
-  .right .upperBlock::after , .right .upperBlock::before{
+
+  .right .upperBlock::after,
+  .right .upperBlock::before {
     display: none;
   }
 
-  .upperBlock p{
+  .upperBlock p {
     transform: rotate(-90deg);
     margin: 0;
     width: 80vw;
     line-height: 6.7vw;
 
   }
-  .downBlock{
+
+  .downBlock {
     position: absolute;
     display: flex;
     z-index: 1;
     width: 100vw;
     height: 30vh;
-    translate: calc(-70vw - 1px) 0 ;
+    translate: calc(-70vw - 1px) 0;
     background-color: var(--primaryColor);
-    border: black var(--borderW8) solid; 
-   
+    border: black var(--borderW8) solid;
+
   }
-  .right{
+
+  .right {
     position: absolute;
     width: 30vw;
   }
-  .image{
+
+  .image {
     align-items: center;
     justify-content: center;
     height: 70%;

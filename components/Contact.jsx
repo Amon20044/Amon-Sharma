@@ -56,7 +56,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <div className='w-screen contact'>
+    <div className='w-screen contact overflow-x-hidden'>
       <div className='w-screen bg-black h-auto flex flex-row max-[850px]:flex-col max-[850px]:px-5 py-8'>
         <div className='w-full h-full bg-black text-white flex flex-col justify-center max-[850px]:px-0 pl-36 pr-12'>
           <div className='mb-20'>
@@ -65,7 +65,7 @@ export default function Contact() {
               alt="Profile"
             />
           </div>
-          
+
           <div className='line h-1 mb-10' style={{ width: `${lineWidth}%` }}></div>
           <div className='space-y-8'>
             <Link href="mailto:amonsharma2000@gmail.com" legacyBehavior>
@@ -77,7 +77,7 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className='space-y-4 form'>
             {formFields.map((field, index) => (
               <div className='form-group space-x-4 items-start justify-start' key={index}>
-                <div className='opacity-50'>{index+1}</div>
+                <div className='opacity-50'>{index + 1}</div>
                 <div>
                   <label htmlFor={field.id}>{field.label}</label>
                   {field.type === 'textarea' ? (
@@ -102,8 +102,8 @@ export default function Contact() {
                       required
                     />
                   )}
-                  <ValidationError 
-                    prefix={field.label} 
+                  <ValidationError
+                    prefix={field.label}
                     field={field.id}
                     errors={state.errors}
                   />
@@ -112,12 +112,12 @@ export default function Contact() {
             ))}
             <button type="submit" disabled={state.submitting} className='bg-[var(--personaColor)] text-[var(--purpleColor)] font-black p-2 max-[850px]:px-2 hover:bg-[var(--primaryColor)] hover:text-[black] hover:scale-110 transition-all'>Submit</button>
           </form>
-          {state.succeeded && 
-          <div className='text-[var(--personaColor)] bg-[var(--purpleColor)] m-4 p-4'>Thanks For Submitting! I will contact you soon</div>
+          {state.succeeded &&
+            <div className='text-[var(--personaColor)] bg-[var(--purpleColor)] m-4 p-4'>Thanks For Submitting! I will contact you soon</div>
           }
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
