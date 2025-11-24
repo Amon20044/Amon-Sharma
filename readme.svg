@@ -213,13 +213,13 @@
     <rect x="60" y="40" width="680" height="720" rx="26"
           fill="var(--card)" stroke="var(--outline)" stroke-width="2" />
 
-    <text x="100" y="120" font-size="20.5" fill="var(--accent)" class="code">
+    <text x="100" y="120" font-size="20" fill="var(--accent)" class="code">
       <tspan font-weight="500">interface</tspan>
       <tspan fill="#333333"> Amon </tspan>
       <tspan font-weight="500">extends</tspan>
       <tspan fill="#333333"> any { iAm: </tspan>
       <tspan font-weight="800" fill="var(--accent)">SoftwareEngineer;</tspan>
-      <tspan fill="#333333"> }</tspan>
+      <tspan fill="#333333">}</tspan>
     </text>
 
     <g class="typing-loader" style="animation-delay: 0.0s; animation-duration: 1.4s;"
