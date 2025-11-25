@@ -21,7 +21,7 @@ const ProjectSchemaMarkup = ({ projects = [] }) => {
         dateCreated: project.dateCreated || new Date().toISOString(),
         keywords: project.keywords || ['web development', 'react', 'next.js', 'ui/ux design'],
         url: project.url || `${process.env.SITE_URL || 'https://amon-sharma.vercel.app'}/#projects`,
-        image: project.image || '/assets/photo.png',
+        image: project.image || '/assets/photo1.png',
         programmingLanguage: project.technologies || ['JavaScript', 'React', 'CSS'],
       })),
     };

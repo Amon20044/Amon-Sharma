@@ -3,7 +3,7 @@ const urlsToCache = [
   '/',
   '/assets/amon.jpeg',
   '/assets/logo.svg',
-  '/assets/photo.png',
+  '/assets/photo1.png',
   '/fonts/BrogiFREE.woff2',
   '/fonts/BrogiFREE.woff',
   '/fonts/BrogiFREE.ttf',
@@ -25,6 +25,6 @@ self.addEventListener('fetch', (event) => {
         // Return cached version or fetch from network
         return response || fetch(event.request);
       }
-    )
+      )
   );
 });

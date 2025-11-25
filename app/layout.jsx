@@ -78,7 +78,7 @@ export const metadata = {
     description: 'Amon Sharma is a Full-Stack Engineer from IIIT Vadodara specializing in scalable cloud architectures, AI/ML integration, and modern web technologies. Experience in building event-reactive systems, 3D web experiences, and real-time applications.',
     images: [
       {
-        url: '/assets/amon.jpeg',
+        url: '/assets/amon.png',
         width: 1200,
         height: 630,
         alt: 'Amon Sharma - Full-Stack Engineer | Software Developer',
@@ -89,7 +89,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Amon Sharma - Full-Stack Engineer | Software Developer',
     description: 'Full-Stack Engineer from IIIT Vadodara specializing in cloud architectures, AI/ML integration, and scalable web applications.',
-    images: ['/assets/amon.jpeg'],
+    images: ['/assets/amon.png'],
     creator: '@amon_sharma',
   },
   robots: {
@@ -117,7 +117,7 @@ export default function RootLayout({ children }) {
     jobTitle: 'Full-Stack Engineer & Software Developer',
     description: 'Full-Stack Engineer from IIIT Vadodara specializing in scalable cloud architectures, AI/ML integration, event-reactive systems, and modern web technologies.',
     url: process.env.SITE_URL || 'https://amon-sharma.vercel.app',
-    image: '/assets/amon.jpeg',
+    image: '/assets/amon.png',
     sameAs: [
       'https://linkedin.com/in/amonsharma007',
       'https://github.com/Amon20044',

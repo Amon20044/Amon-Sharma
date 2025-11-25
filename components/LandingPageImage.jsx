@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Photo from "@/assets/photo.png";
+import Photo from "@/assets/photo1.png";
 
 export default function LandingPageImage({ winCheck }) {
   return (

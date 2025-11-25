@@ -58,14 +58,14 @@ export default function Home() {
 
   useEffect(() => {
     const updateWinCheck = () => {
-        setWinCheck(window.innerWidth >= 850);
+      setWinCheck(window.innerWidth >= 850);
     };
 
     updateWinCheck();
     window.addEventListener('resize', updateWinCheck);
 
     return () => {
-        window.removeEventListener('resize', updateWinCheck);
+      window.removeEventListener('resize', updateWinCheck);
     };
   }, []);
 
@@ -83,7 +83,7 @@ export default function Home() {
           dateCreated: "2024-01-01",
           keywords: ["Next.js", "React", "GSAP", "Tailwind CSS", "Portfolio"],
           technologies: ["JavaScript", "React", "Next.js", "CSS", "GSAP"],
-          image: "/assets/photo.png"
+          image: "/assets/photo1.png"
         }
         // Add more projects here as needed
       ]} />
@@ -95,7 +95,7 @@ export default function Home() {
         <div className="services" id="services"><Services /></div>
         <div className="projects" id="projects"><Project /></div>
         <div className="contact" id="contact"><Contact /></div>
-        { winCheck &&
+        {winCheck &&
           <div
             className="fixed w-12 h-12 bg-white rounded-full pointer-events-none"
             style={{

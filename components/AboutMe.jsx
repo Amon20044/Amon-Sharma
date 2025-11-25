@@ -7,7 +7,7 @@ import AboutMee from '@/assets/AboutMe.svg';
 import './AboutMe.css';
 import Image from 'next/image';
 import about from '@/assets/about.svg';
-import amon from '@/assets/amon.jpeg';
+import amon from '@/assets/amon.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,12 +74,12 @@ export default function AboutMe() {
       </div>
       <div className='blockc w-[85vw] h-full max-[850px]:w-screen max-[850px]:h-[85%] color z-10 max-[850px]:ml-2 max-[850px]:mr-3'>
         <div className='flex flex-col justify-center items-center w-[100%] h-[100%] pr-[15vw] pl-[10vw] '>
-          <div className='z-20 relative h-[50vh] w-[40vh] rounded-2xl my-5 '>
+          <div className='-z-20 relative h-[50vh] w-[50vh] my-12 '>
             <Image
               src={amon}
               alt='Amon'
               objectPosition='right top'
-              className='rounded-2xl '
+              className=''
             />
           </div>
           <div className='h-[40%] w-full flex items-center justify-center flex-col my-5'>
